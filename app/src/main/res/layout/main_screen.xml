@@ -106,6 +106,7 @@
                     android:style="@style/some_id"
                     android:fontFamily="@font/pretendard_medium"
                     android:paddingLeft="17dp"
+                    android:shadowColor="#000000"
                     />
 
                 <RadioButton
