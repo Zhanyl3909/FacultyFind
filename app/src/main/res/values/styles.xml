@@ -2,9 +2,8 @@
 <resources>
     <!-- Welcome Screen Styles -->
     <style name="welcome_screen_logo">
-        <item name="android:textSize">30sp</item>
-        <item name="android:textColor">#FFCA08</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#646466</item>
     </style>
 
     <style name="bufs">
@@ -23,7 +22,7 @@
     </style>
     <style name="main_screen_bufs_1">
         <item name="android:textSize">128sp</item>
-        <item name="android:textColor">#17000000</item>
+        <item name="android:textColor">#170000</item>
     </style>
 
     <style name="main_screen_find_fac">
