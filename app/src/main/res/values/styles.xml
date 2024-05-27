@@ -59,4 +59,16 @@
         <item name="android:textColor">#FFFFFF</item>
     </style>
 
+    <!-- Last Screen Styles -->
+    <style name="last_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="result">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
 </resources>
