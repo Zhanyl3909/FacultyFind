@@ -90,18 +90,17 @@
 
                 <RadioButton
                     android:id="@+id/option1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="202dp"
                     android:layout_height="40dp"
                     android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
                     android:paddingLeft="17dp"
                     android:text="@string/option1"
-                    android:textAppearance="@style/some_id"
-                    />
+                    android:textAppearance="@style/some_id" />
 
                 <RadioButton
                     android:id="@+id/option2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="202dp"
                     android:layout_height="40dp"
                     android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
@@ -111,7 +110,7 @@
 
                 <RadioButton
                     android:id="@+id/option3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="202dp"
                     android:layout_height="40dp"
                     android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
