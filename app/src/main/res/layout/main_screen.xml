@@ -131,7 +131,7 @@
             </RadioGroup>
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/main_screen_progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="232dp"
                 android:layout_height="8dp"
