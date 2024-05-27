@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.os.Handler
-import com.example.hackathon.FirstScreenActivity
-import com.example.hackathon.R
 
 
 class  MainActivity : AppCompatActivity() {
@@ -24,7 +22,7 @@ class  MainActivity : AppCompatActivity() {
 
         val hand = Handler()
         hand.postDelayed(Runnable {
-            val intent = Intent(this@MainActivity, FirstScreenActivity::class.java)
+            val intent = Intent(this@MainActivity, ProgressBarTestActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)
