@@ -156,8 +156,9 @@
         </LinearLayout>
 
         <!-- Bottom Navigation Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        
+        <FrameLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="25dp"
@@ -169,40 +170,58 @@
                 android:layout_width="250dp"
                 android:layout_height="45dp"
                 android:background="@drawable/main_screen_next_button"
-                android:gravity="center"
+
                 >
+
+                <View
+                    android:layout_width="23dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/left_arrow" />
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_back"
                     android:textAppearance="@style/button_back"
-                    android:gravity="center"
+                    android:layout_centerInParent="true"
                     android:fontFamily="@font/pretendard_bold"
                     />
+                
+
 
             </RelativeLayout>
             
             <RelativeLayout
                 android:id="@+id/back_button"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="53dp"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
                 android:background="@drawable/main_screen_next_button"
-                android:gravity="center"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_next"
                     android:textAppearance="@style/button_back"
-                    android:gravity="center"
                     android:fontFamily="@font/pretendard_bold"
+                    android:layout_centerInParent="true"
                     />
+                <View
+                    android:layout_width="23dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/right_arrow" />
             </RelativeLayout>
 
 
 
 
-        </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
 </RelativeLayout>

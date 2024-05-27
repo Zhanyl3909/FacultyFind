@@ -10,110 +10,88 @@
     android:orientation="vertical"
     >
 
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:paddingBottom="60dp"-->
-<!--        android:orientation="vertical"-->
-<!--        android:gravity="center"-->
-<!--        >-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/take_a_pict"-->
-<!--            android:layout_width="206dp"-->
-<!--            android:layout_height="49dp"-->
-<!--            android:text="@string/main_screen_bufs"-->
-<!--            android:lineSpacingExtra="3sp"-->
-<!--            android:translationY="-1.32sp"-->
-<!--            android:style="@style/bufs"-->
-<!--            android:gravity="center_horizontal|top"-->
-<!--            android:fontFamily=""-->
-<!--            android:lineHeight="22sp"-->
-<!--            />-->
-
-<!--        <FrameLayout-->
-<!--            android:layout_width="282dp"-->
-<!--            android:layout_height="282dp"-->
-<!--            android:layout_marginTop="33dp"-->
-<!--            android:background=""-->
-<!--            >-->
-<!--            <View-->
-<!--                android:id="@+id/disposal"-->
-<!--                android:layout_width="209dp"-->
-<!--                android:layout_height="174dp"-->
-<!--                android:background=""-->
-<!--                android:layout_gravity="center"-->
-<!--                />-->
-<!--        </FrameLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/start_button"-->
-<!--            android:layout_width="167dp"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_marginTop="56dp"-->
-<!--            android:background=""-->
-<!--            android:orientation="vertical"-->
-<!--            android:gravity="center"-->
-<!--            android:clickable="true"-->
-<!--            >-->
-
-<!--            &lt;!&ndash; Auto layout, variables, and unit scale are not yet supported &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:id="@+id/label"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:text=""-->
-<!--                android:lineSpacingExtra="-2sp"-->
-<!--                android:gravity="center_horizontal|center_vertical"-->
-<!--                android:fontFamily=""-->
-<!--                android:lineHeight="22sp"-->
-<!--                />-->
-
-
-<!--        </LinearLayout>-->
-
-
-
-<!--    </LinearLayout>-->
-
-<LinearLayout
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginTop="50"
-    android:gravity="center"
+    android:layout_marginTop="109dp"
+
 >
     <TextView
         android:id="@+id/main_screen_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|top"
         android:text="@string/main_screen_bufs"
-        style="@style/bufs"
+        android:style="@style/bufs"
     >
 
     </TextView>
-</LinearLayout>
 
+    <TextView
+        android:id="@+id/bufs"
+        android:layout_width="wrap_content"
+        android:layout_height="155dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/main_screen_bufs"
+        android:style="@style/bufs_shadow"
+        />
+
+</FrameLayout>
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_horizontal"
 >
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_margin_="50dp"
-        android:text="button"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:onclick="btn"
+    <View
+        android:id="@+id/rectangle"
+        android:layout_width="match_parent"
+        android:layout_height="315dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="#FFCA08"
+        android:layout_gravity="center_horizontal|top"
+        />
+
+</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/test_button"
+        android:layout_width="289dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/test"
+        android:layout_gravity="center"
+        android:text="다음단계"
+
         >
 
-    </Button>
-</LinearLayout>
+    </RelativeLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="150dp"-->
+<!--        android:gravity="bottom"-->
+<!--        android:orientation="vertical"-->
+<!--        >-->
+
+<!--        <Button-->
+<!--            android:id="@+id/next_button"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:layout_margin_="50dp"-->
+<!--            android:onclick="btn"-->
+<!--            android:text="다음단계"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold"-->
+
+<!--        >-->
+
+<!--        </Button>-->
+<!--    </LinearLayout>-->
+
 
 </LinearLayout>
