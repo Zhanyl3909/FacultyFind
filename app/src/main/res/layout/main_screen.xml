@@ -69,11 +69,11 @@
                 android:id="@+id/questions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1. 평소 말이나 글로 내 생각을 표현하는 것을 즐기는 편이다."
+                android:text="@string/questions"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="16sp"
                 android:layout_marginBottom="20dp"
-                android:textColor="#000000"/>
+                style="@style/main_screen_questions"
+       />
 
             <RadioGroup
                 android:id="@+id/options"
@@ -86,21 +86,21 @@
                     android:id="@+id/option1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="정말 그렇다"
-                    android:textColor="#000000"/>
+                    android:text="@string/option1"
+                    style="@style/main_screen_questions"
+                    />
 
                 <RadioButton
                     android:id="@+id/option2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="보통이다"
-                    android:textColor="#000000"/>
+                    android:text="@string/option2"/>
 
                 <RadioButton
                     android:id="@+id/option3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="그렇지 않다"
+                    android:text="@string/option3"
                     android:textColor="#000000"/>
             </RadioGroup>
         </RelativeLayout>
@@ -116,9 +116,9 @@
                 android:id="@+id/progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1 / 21"
+                android:text="@string/progress"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000"
+                style="@style/progress"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -126,9 +126,8 @@
                 android:id="@+id/next_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="다음 단계"
-                android:background="#B0B0B0"
-                android:textColor="#FFFFFF"
+                android:text="@string/main_screen_next_step"
+                android:background="@drawable/main_screen_next_button"
                 android:layout_gravity="center"/>
         </LinearLayout>
     </LinearLayout>
