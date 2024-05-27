@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/bufs"
@@ -14,21 +14,23 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="115dp"
-
             android:gravity="center_horizontal|top"
             android:text="@string/main_screen_bufs"
             android:textAppearance="@style/main_screen_bufs" />
 
         <TextView
-            android:id="@+id/some_id"
+            android:id="@+id/text_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal|top"
             android:text="@string/main_screen_find_fac"
             android:textAppearance="@style/main_screen_find_fac" />
 
-    </LinearLayout>
+</RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,13 +48,30 @@
             />
     </LinearLayout>
 
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="350dp"
-        android:layout_height="368dp"
-        android:layout_marginLeft="24dp"
-        android:background="#FFCA08"
-        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/rectangle_2"
+            android:layout_width="350dp"
+            android:layout_height="368dp"
+            android:layout_marginLeft="24dp"
+            android:background="#FFCA08"
+            />
+
+        <TextView
+            android:id="@+id/questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/questions"
+            android:textAppearance="@style/main_screen_questions"
+            android:gravity="center_horizontal"
+            />
+    </RelativeLayout>
+
+
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/main_screen_next_button"
