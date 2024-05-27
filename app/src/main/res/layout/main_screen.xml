@@ -83,7 +83,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="37dp"
                     android:fontFamily="@font/pretendard_semibold"
-                    android:lineHeight="21sp"
+                    android:lineHeight="25sp"
                     android:style="@style/main_screen_questions"
                     android:text="@string/questions"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -131,6 +131,17 @@
                     />
             </RadioGroup>
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="232dp"
+                android:layout_height="12dp"
+                android:progress="40"
+                android:max="100"
+                android:layout_marginTop="20dp"
+                android:progressDrawable="@drawable/progressbar_progressbar1"
+                />
+
             <TextView
                 android:id="@+id/progress"
                 android:layout_width="wrap_content"
@@ -153,14 +164,17 @@
             android:orientation="vertical">
 
 
-
-            <Button
-                android:id="@+id/next_button"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <!-- Auto layout, variables, and unit scale are not yet supported -->
+            <RelativeLayout
+                android:id="@+id/property_1_"
+                android:layout_width="289dp"
+                android:layout_height="49dp"
                 android:background="@drawable/main_screen_next_button"
-                android:text="@string/main_screen_next_step" />
+                />
+
+
+
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
