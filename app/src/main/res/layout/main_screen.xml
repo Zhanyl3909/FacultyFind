@@ -17,14 +17,15 @@
         <RelativeLayout
             android:id="@+id/text_shadow"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="130dp"
             >
 
             <TextView
                 android:id="@+id/bufs"
                 android:layout_width="wrap_content"
-                android:layout_height="85dp"
+                android:layout_height="75dp"
                 android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/pretendard_bold"
                 android:text="BUFS"
                 android:textColor="#000000"
@@ -44,9 +45,10 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="145dp"
+                android:layout_height="125dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
                 android:fontFamily="@font/pretendard_bold"
                 android:text="BUFS"
                 android:textAppearance="@style/bufs_shadow">
@@ -58,8 +60,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="315dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
             android:background="#FFCA08"
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -184,7 +186,7 @@
             <RelativeLayout
                 android:id="@+id/back_button"
                 android:layout_width="250dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:background="@drawable/main_screen_button"
                 android:clickable="true"
                 >
@@ -210,7 +212,7 @@
                 android:id="@+id/next_button"
                 android:layout_marginTop="53dp"
                 android:layout_width="250dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:background="@drawable/main_screen_button_non"
                 android:clickable="true"
                 >
