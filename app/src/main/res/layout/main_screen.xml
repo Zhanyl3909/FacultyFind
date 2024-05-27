@@ -1,98 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#E0E0E0"
+    android:padding="16dp">
 
-    <RelativeLayout
+    <!-- Background Reflection -->
+    <TextView
+        android:id="@+id/background_bufs"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
 
-        <TextView
-            android:id="@+id/bufs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="115dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/main_screen_bufs"
-            android:textAppearance="@style/main_screen_bufs" />
-
-        <TextView
-            android:id="@+id/text_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="100dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/main_screen_find_fac"
-            android:textAppearance="@style/main_screen_find_fac" />
-
-</RelativeLayout>
-
+        android:text="BUFS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:textSize="100sp"
+        android:textColor="#000000"
+        android:alpha="0.1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/bufs1"
-            android:layout_width="wrap_content"
+        <!-- Header Section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="31dp"
-            android:text="@string/main_screen_bufs1"
-            android:textAppearance="@style/main_screen_bufs_1"
-            android:gravity="center_horizontal|top"
-            />
-    </LinearLayout>
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/bufs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="BUFS"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#000000"/>
 
-        <View
-            android:id="@+id/rectangle_2"
-            android:layout_width="350dp"
-            android:layout_height="368dp"
-            android:layout_marginLeft="24dp"
+            <TextView
+                android:id="@+id/text_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bufs"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="내게 맞는 학과 찾기"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+        </RelativeLayout>
+
+        <!-- Question Section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="#FFCA08"
-            />
+            android:padding="20dp"
+            android:layout_marginBottom="20dp">
 
-        <TextView
-            android:id="@+id/questions"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/questions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. 평소 말이나 글로 내 생각을 표현하는 것을 즐기는 편이다."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#000000"/>
+
+            <RadioGroup
+                android:id="@+id/options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/questions">
+
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="정말 그렇다"
+                    android:textColor="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보통이다"
+                    android:textColor="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="그렇지 않다"
+                    android:textColor="#000000"/>
+            </RadioGroup>
+        </RelativeLayout>
+
+        <!-- Bottom Navigation Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-            android:text="@string/questions"
-            android:textAppearance="@style/main_screen_questions"
-            android:gravity="center_horizontal"
-            />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 / 21"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/main_screen_next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/main_screen_next_button"
-        >
-
-        <TextView
-            android:id="@+id/next_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/main_screen_next_step"
-            android:textAppearance="@style/main_screen_next_step"
-            style="@style/main_screen_next_step"
-            android:layout_centerInParent="true"
-            />
-    </RelativeLayout>
-
-
-</LinearLayout>
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="다음 단계"
+                android:background="#B0B0B0"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
