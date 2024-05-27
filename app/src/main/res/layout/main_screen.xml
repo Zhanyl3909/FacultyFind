@@ -26,7 +26,6 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/pretendard_bold"
                 android:text="BUFS"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#000000"
                 android:textSize="77sp"
                 android:textStyle="bold" />
@@ -39,7 +38,6 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/pretendard_bold"
                 android:text="내게 맞는 학과 찾기"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000"
                 android:textSize="19sp" />
         </RelativeLayout>
@@ -49,31 +47,27 @@
             android:layout_height="315dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:orientation="vertical"
             android:background="#FFCA08"
-            android:padding="20dp"
             android:gravity="center_horizontal"
-            >
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/questions_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="21sp"
-                    android:style="@style/main_screen_questions"
-                    android:layout_marginRight="5dp"
                     android:text="@string/questions_no"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    />
+                    android:textAppearance="@style/main_screen_questions" />
 
                 <TextView
                     android:id="@+id/questions"
@@ -82,53 +76,49 @@
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="25sp"
-                    android:style="@style/main_screen_questions"
                     android:text="@string/questions"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    />
+                    android:textAppearance="@style/main_screen_questions" />
             </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/options"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/questions"
-                android:orientation="vertical"
-                android:paddingLeft="7dp"
                 android:layout_marginTop="10dp"
-                >
+                android:orientation="vertical"
+                android:paddingLeft="7dp">
 
                 <RadioButton
                     android:id="@+id/option1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/option1"
-                    android:style="@style/some_id"
+                    android:layout_height="40dp"
+                    android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
                     android:paddingLeft="17dp"
-                    android:shadowColor="#000000"
+                    android:text="@string/option1"
+                    android:textAppearance="@style/some_id"
                     />
 
                 <RadioButton
                     android:id="@+id/option2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/option2"
-                    android:style="@style/some_id"
+                    android:layout_height="40dp"
+                    android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
                     android:paddingLeft="17dp"
-                    />
+                    android:text="@string/option2"
+                    android:textAppearance="@style/some_id" />
 
                 <RadioButton
                     android:id="@+id/option3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/option3"
-                    android:textColor="#000000"
-                    android:style="@style/some_id"
+                    android:layout_height="40dp"
+                    android:button="@drawable/custom_radio_button"
                     android:fontFamily="@font/pretendard_medium"
                     android:paddingLeft="17dp"
-                    />
+                    android:text="@string/option3"
+                    android:textAppearance="@style/some_id"
+                    android:textColor="#000000" />
             </RadioGroup>
 
             <ProgressBar
@@ -136,22 +126,19 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="232dp"
                 android:layout_height="8dp"
-                android:progress="40"
-                android:max="100"
                 android:layout_marginTop="20dp"
-                android:progressDrawable="@drawable/progressbar_progressbar1"
-                />
+                android:max="100"
+                android:progress="40"
+                android:progressDrawable="@drawable/progressbar_progressbar1" />
 
             <TextView
                 android:id="@+id/progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="7dp"
-                android:style="@style/progress"
+                android:gravity="center"
                 android:text="@string/progress"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                />
+                android:textAppearance="@style/progress" />
 
 
         </LinearLayout>
@@ -160,48 +147,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="25dp"
-            android:orientation="vertical"
-            >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/next_button"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
                 android:background="@drawable/main_screen_next_button"
-                android:gravity="center"
-                >
+                android:gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_back"
-                    android:textAppearance="@style/button_back"
-                    android:gravity="center"
                     android:fontFamily="@font/pretendard_bold"
-                    />
+                    android:gravity="center"
+                    android:text="@string/button_back"
+                    android:textAppearance="@style/button_back" />
 
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/back_button"
-                android:layout_marginTop="8dp"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/main_screen_next_button"
-                android:gravity="center"
-                >
+                android:gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_next"
-                    android:textAppearance="@style/button_back"
-                    android:gravity="center"
                     android:fontFamily="@font/pretendard_bold"
-                    />
+                    android:gravity="center"
+                    android:text="@string/button_next"
+                    android:textAppearance="@style/button_back" />
             </RelativeLayout>
-
-
 
 
         </LinearLayout>
