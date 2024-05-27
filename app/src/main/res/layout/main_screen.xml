@@ -138,7 +138,7 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="232dp"
                 android:layout_height="8dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:max="100"
                 android:progress="40"
                 android:progressDrawable="@drawable/progressbar_progressbar1" />
@@ -152,6 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
+                    android:layout_marginRight="3dp"
                     android:gravity="center"
                     android:text="@string/progress"
                     android:textAppearance="@style/progress" />
@@ -162,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
                     android:gravity="center"
-                    android:text="/21"
+                    android:text="/ 21"
                     android:textAppearance="@style/progress" />
             </LinearLayout>
 
@@ -181,21 +182,19 @@
             >
 
             <RelativeLayout
-                android:id="@+id/next_button"
+                android:id="@+id/back_button"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
-                android:background="@drawable/main_screen_next_button"
-
+                android:background="@drawable/main_screen_button"
+                android:clickable="true"
                 >
-
                 <View
                     android:layout_width="23dp"
                     android:layout_height="16dp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/left_arrow" />
-
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/arrow_left" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -205,17 +204,15 @@
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/pretendard_bold"
                     />
-
-
-
             </RelativeLayout>
             
             <RelativeLayout
-                android:id="@+id/back_button"
+                android:id="@+id/next_button"
                 android:layout_marginTop="53dp"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
-                android:background="@drawable/main_screen_next_button"
+                android:background="@drawable/main_screen_button_non"
+                android:clickable="true"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -230,8 +227,8 @@
                     android:layout_height="16dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/right_arrow" />
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/arrow_right" />
             </RelativeLayout>
 
 

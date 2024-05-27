@@ -24,8 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|top"
         android:text="@string/main_screen_bufs"
-        android:style="@style/bufs"
-    >
+        android:textAppearance="@style/bufs"
+     >
 
     </TextView>
 
@@ -37,7 +37,7 @@
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal|bottom"
         android:text="@string/main_screen_bufs"
-        android:style="@style/bufs_shadow"
+        android:textAppearance="@style/bufs_shadow"
         />
 
 </FrameLayout>
@@ -62,7 +62,6 @@
         android:layout_width="289dp"
         android:layout_height="49dp"
         android:layout_marginTop="42dp"
-        android:background="@drawable/test"
         android:layout_gravity="center"
         android:text="다음단계"
 
