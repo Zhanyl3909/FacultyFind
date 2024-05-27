@@ -1,49 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
-    android:padding="16dp">
+    android:background="@drawable/first_screen_back"
+    >
 
-    <!-- Background Reflection -->
-    <TextView
-        android:id="@+id/background_bufs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-
-        android:text="BUFS"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:textSize="100sp"
-        android:textColor="#000000"
-        android:alpha="0.1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <!-- Header Section -->
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp"
             android:paddingBottom="30dp">
 
             <TextView
                 android:id="@+id/bufs"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="90dp"
                 android:layout_centerHorizontal="true"
+                android:fontFamily="@font/pretendard_bold"
                 android:text="BUFS"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
-                android:textSize="64sp"
                 android:textColor="#000000"
-                android:fontFamily="@font/inter_bold"
-                />
+                android:textSize="77sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/text_main"
@@ -51,86 +37,131 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bufs"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pretendard_bold"
                 android:text="내게 맞는 학과 찾기"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="16sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:textSize="19sp" />
         </RelativeLayout>
 
-        <!-- Question Section -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="368dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
             android:background="#FFCA08"
             android:padding="20dp"
-            android:layout_marginBottom="20dp">
+            android:gravity="center_horizontal"
+            >
 
-            <TextView
-                android:id="@+id/questions"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/questions"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginBottom="20dp"
-                style="@style/main_screen_questions"
-       />
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/questions_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="21sp"
+                    android:style="@style/main_screen_questions"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/questions_no"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+
+                <TextView
+                    android:id="@+id/questions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="37dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="21sp"
+                    android:style="@style/main_screen_questions"
+                    android:text="@string/questions"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+            </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/options"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/questions"
                 android:orientation="vertical"
-                android:layout_below="@id/questions">
+                android:paddingLeft="7dp"
+                >
 
                 <RadioButton
                     android:id="@+id/option1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/option1"
-                    android:style="@style/main_screen_questions"
+                    android:style="@style/some_id"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:paddingLeft="17dp"
                     />
 
                 <RadioButton
                     android:id="@+id/option2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/option2"/>
+                    android:text="@string/option2"
+                    android:style="@style/some_id"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:paddingLeft="17dp"
+                    />
 
                 <RadioButton
                     android:id="@+id/option3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/option3"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000"
+                    android:style="@style/some_id"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:paddingLeft="17dp"
+                    />
             </RadioGroup>
-        </RelativeLayout>
-
-        <!-- Bottom Navigation Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
 
             <TextView
                 android:id="@+id/progress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                gra
+                android:style="@style/progress"
                 android:text="@string/progress"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:style="@style/progress"
-                android:gravity="center"
-                android:layout_marginBottom="10dp"/>
+                />
+
+
+        </LinearLayout>
+
+        <!-- Bottom Navigation Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
 
             <Button
                 android:id="@+id/next_button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="@string/main_screen_next_step"
+                android:layout_gravity="center"
                 android:background="@drawable/main_screen_next_button"
-                android:layout_gravity="center"/>
+                android:text="@string/main_screen_next_step" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
