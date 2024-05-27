@@ -22,7 +22,7 @@ android:background="#FFFFFF"
         android:id="@+id/sprout"
         android:layout_width="92dp"
         android:layout_height="128.4dp"
-        android:background="@drawable/Logo"
+        android:background="@drawable/lo_go"
         />
 
     <TextView
@@ -31,9 +31,8 @@ android:background="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/welcome_screen_logo"
-        android:style="@style/welcome_screen_logo"
+        android:textAppearance="@style/welcome_screen_logo"
         android:fontFamily="@font/pretendard_medium"
-        android:gravity="top"
         />
 
 

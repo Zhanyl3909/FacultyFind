@@ -1,4 +1,4 @@
-package com.example.recyclingapp
+package com.example.hackathon
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import com.example.hackathon.FirstScreenActivity
 import com.example.hackathon.R
 
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
