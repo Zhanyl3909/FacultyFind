@@ -1,27 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:clipToOutline="true"
+    android:background="#FFFFFF"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="427dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/take_a_pict"
+            android:layout_width="206dp"
+            android:layout_height="49dp"
+            android:text=""
+            android:textAppearance=""
+            android:lineSpacingExtra="3sp"
+            android:translationY="-1.32sp"
+            android:gravity="center_horizontal|top"
+            android:fontFamily=""
+            android:lineHeight="22sp"
+            />
+
+        <FrameLayout
+            android:layout_width="282dp"
+            android:layout_height="282dp"
+            android:layout_marginTop="33dp"
+            android:background=""
+            >
+            <View
+                android:id="@+id/disposal"
+                android:layout_width="209dp"
+                android:layout_height="174dp"
+                android:background=""
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/start_button"
+            android:layout_width="167dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="56dp"
+            android:background=""
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            >
+
+            <!-- Auto layout, variables, and unit scale are not yet supported -->
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textAppearance=""
+                android:lineSpacingExtra="-2sp"
+                android:gravity="center_horizontal|center_vertical"
+                android:fontFamily=""
+                android:lineHeight="22sp"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
