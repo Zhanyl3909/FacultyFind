@@ -1,10 +1,15 @@
-package com.example.hackathon
+package com.example.recyclingapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.os.Handler
+import com.example.hackathon.FirstScreenActivity
+import com.example.hackathon.R
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +21,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val hand = Handler()
+        hand.postDelayed(Runnable {
+            val intent = Intent(this@MainActivity, FirstScreenActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000)
+
+
     }
 }
