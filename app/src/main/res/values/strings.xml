@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">hackathon</string>
+    <string name="app_name">Hack</string>
+
+    <!-- Main Screen Strings -->
+    <string name="main_screen_bufs">BUFS</string>
+    <string name="main_screen_bufs1">BUFS</string>
+    <string name="main_screen_find_fac"> 내게 맞는 학과 찾기 </string>
+    <string name="main_screen_next_step"> 다음 단계 </string>
 </resources>
