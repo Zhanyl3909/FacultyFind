@@ -1,83 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/home_screen"
+    android:id="@+id/main_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToOutline="true"
     android:background="#FFFFFF"
+    android:orientation="vertical"
     >
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="60dp"
-        android:orientation="vertical"
-        android:gravity="center"
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:paddingBottom="60dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:gravity="center"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/take_a_pict"-->
+<!--            android:layout_width="206dp"-->
+<!--            android:layout_height="49dp"-->
+<!--            android:text="@string/main_screen_bufs"-->
+<!--            android:lineSpacingExtra="3sp"-->
+<!--            android:translationY="-1.32sp"-->
+<!--            android:style="@style/bufs"-->
+<!--            android:gravity="center_horizontal|top"-->
+<!--            android:fontFamily=""-->
+<!--            android:lineHeight="22sp"-->
+<!--            />-->
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="282dp"-->
+<!--            android:layout_height="282dp"-->
+<!--            android:layout_marginTop="33dp"-->
+<!--            android:background=""-->
+<!--            >-->
+<!--            <View-->
+<!--                android:id="@+id/disposal"-->
+<!--                android:layout_width="209dp"-->
+<!--                android:layout_height="174dp"-->
+<!--                android:background=""-->
+<!--                android:layout_gravity="center"-->
+<!--                />-->
+<!--        </FrameLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/start_button"-->
+<!--            android:layout_width="167dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginTop="56dp"-->
+<!--            android:background=""-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:clickable="true"-->
+<!--            >-->
+
+<!--            &lt;!&ndash; Auto layout, variables, and unit scale are not yet supported &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/label"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text=""-->
+<!--                android:lineSpacingExtra="-2sp"-->
+<!--                android:gravity="center_horizontal|center_vertical"-->
+<!--                android:fontFamily=""-->
+<!--                android:lineHeight="22sp"-->
+<!--                />-->
+
+
+<!--        </LinearLayout>-->
+
+
+
+<!--    </LinearLayout>-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="50"
+    android:gravity="center"
+>
+    <TextView
+        android:id="@+id/main_screen_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_screen_bufs"
+        style="@style/bufs"
+    >
+
+    </TextView>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+>
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_margin_="50dp"
+        android:text="button"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:onclick="btn"
         >
 
-        <TextView
-            android:id="@+id/take_a_pict"
-            android:layout_width="206dp"
-            android:layout_height="49dp"
-            android:text="@string/main_screen_bufs"
-            android:lineSpacingExtra="3sp"
-            android:translationY="-1.32sp"
-            android:style="@style/bufs"
-            android:gravity="center_horizontal|top"
-            android:fontFamily=""
-            android:lineHeight="22sp"
-            />
+    </Button>
+</LinearLayout>
 
-        <FrameLayout
-            android:layout_width="282dp"
-            android:layout_height="282dp"
-            android:layout_marginTop="33dp"
-            android:background=""
-            >
-            <View
-                android:id="@+id/disposal"
-                android:layout_width="209dp"
-                android:layout_height="174dp"
-                android:background=""
-                android:layout_gravity="center"
-                />
-        </FrameLayout>
-
-        <LinearLayout
-            android:id="@+id/start_button"
-            android:layout_width="167dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="56dp"
-            android:background=""
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            >
-
-            <!-- Auto layout, variables, and unit scale are not yet supported -->
-            <TextView
-                android:id="@+id/label"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=""
-                android:lineSpacingExtra="-2sp"
-                android:gravity="center_horizontal|center_vertical"
-                android:fontFamily=""
-                android:lineHeight="22sp"
-                />
-
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-
-
-
-
-</RelativeLayout>
+</LinearLayout>

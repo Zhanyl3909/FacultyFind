@@ -3,39 +3,39 @@
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_black"/>
+        android:font="@font/pretendard_black"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_bold"/>
+        android:font="@font/pretendard_bold"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_extrabold"/>
+        android:font="@font/pretendard_extralight"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_extralight"/>
+        android:font="@font/pretendard_extrabold"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_light"/>
+        android:font="@font/pretendard_light"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_medium"/>
+        android:font="@font/pretendard_medium"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_regular"/>
+        android:font="@font/pretendard_regular"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_semibold"/>
+        android:font="@font/pretendard_semibold"/>
 
     <font android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/inter_thin"/>
+        android:font="@font/pretendard_thin"/>
 
 
 </font-family>

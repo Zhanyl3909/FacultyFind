@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="facultyfind">
-        <item name="android:textSize">45sp</item>
+    <!-- Welcome Screen Styles -->
+    <style name="welcome_screen_logo">
+        <item name="android:textSize">30sp</item>
         <item name="android:textColor">#FFCA08</item>
         <item name="android:textStyle">bold</item>
     </style>

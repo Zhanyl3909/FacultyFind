@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Hack</string>
 
+    <!-- welcome Screen Strings  -->
+    <string name="welcome_screen_logo">Faculty Find</string>
+
+
     <!-- Main Screen Strings -->
     <string name="main_screen_bufs">BUFS</string>
     <string name="main_screen_bufs1">BUFS</string>
