@@ -15,4 +15,7 @@
     <string name="option1">정말 그렇다</string>
     <string name="option2">보통이다</string>
     <string name="option3">그렇지 않다</string>
+
+    <string name="button_next">다음 단계</string>
+    <string name="button_back">이전 단계</string>
 </resources>
