@@ -114,15 +114,21 @@ class ResultActivity : AppCompatActivity() {
         goToDetails.setOnClickListener {
             val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
 
-                intent.putExtra("DETAIL_TEXT_title1", detailText1)
             if (valueKeys.size == 2) {
+                intent.putExtra("DETAIL_TEXT_title1", detailText1)
                 intent.putExtra("DETAIL_TEXT_title2", detailText2)
+                intent.putExtra("Major_Count", 2)
+            } else if (valueKeys.size == 1) {
+                intent.putExtra("DETAIL_TEXT_title1", detailText1)
+                intent.putExtra("Major_Count", 1)
             }
 
             val detailText = getDetailTextForResult(resultMajor1.text.toString())
             intent.putExtra("DETAIL_TEXT", detailText)
             val detailTextMajor = getDetailTextForResultMajor(resultMajor1.text.toString())
             intent.putExtra("DETAIL_TEXT_Major", detailTextMajor)
+
+
 
             startActivity(intent)
         }

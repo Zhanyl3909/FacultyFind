@@ -8,6 +8,11 @@ import com.example.hackathon.R
 
 class DetailsActivity : AppCompatActivity() {
 
+    lateinit var titleForDetails1: TextView
+    lateinit var titleForDetails2: TextView
+    lateinit var textViewForDetails: TextView
+    lateinit var textViewForDetailsMajor: TextView
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,16 +34,23 @@ class DetailsActivity : AppCompatActivity() {
 //            "Social" to socialScore
 //        )
 
-        val titleForDetails1 = findViewById<TextView>(R.id.details_faculty_text)
+        val majorCount = intent.getStringExtra("Major_Count")
+
+        if (majorCount == "1") {
+
+        }
+
+
+        titleForDetails1 = findViewById(R.id.details_faculty_text)
         titleForDetails1.text = intent.getStringExtra("DETAIL_TEXT_title1")
 
-        val titleForDetails2 = findViewById<TextView>(R.id.details_faculty_text_second)
+        titleForDetails2 = findViewById(R.id.details_faculty_text_second)
         titleForDetails2.text = intent.getStringExtra("DETAIL_TEXT_title2")
 
-        val textViewForDetails = findViewById<TextView>(R.id.textView_forDetails)
+        textViewForDetails = findViewById(R.id.textView_forDetails)
         textViewForDetails.text = intent.getStringExtra("DETAIL_TEXT")
 
-        val textViewForDetailsMajor = findViewById<TextView>(R.id.textView_forDetails)
+        textViewForDetailsMajor = findViewById(R.id.detail_faculty)
         textViewForDetailsMajor.text = intent.getStringExtra("DETAIL_TEXT_Major")
     }
 
