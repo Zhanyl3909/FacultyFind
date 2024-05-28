@@ -85,10 +85,10 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-    private fun setQuestion() {
+    private fun setQuestion() {  //text 표시
         questionTextView.text = questions[currentQuestionIndex]
     }
-    private fun goToNextQuestion() {
+    private fun goToNextQuestion() {    //바꾸는 것
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.size
         setQuestion()
     }
