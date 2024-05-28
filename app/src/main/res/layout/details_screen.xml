@@ -223,10 +223,10 @@
                         <View
                             android:id="@+id/detail_line"
                             android:layout_width="195dp"
-                            android:layout_height="0.5dp"
+                            android:layout_height="1dp"
                             android:layout_below="@+id/detail_job"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:background="@drawable/detail_line"
                             />
 
@@ -280,10 +280,10 @@
                         <View
                             android:id="@+id/detail_faculty_line"
                             android:layout_width="195dp"
-                            android:layout_height="0.5dp"
+                            android:layout_height="1dp"
                             android:layout_below="@+id/detail_faculty"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:background="@drawable/detail_line"
                             />
                     </RelativeLayout>
@@ -298,6 +298,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     >
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -444,10 +445,10 @@
                         <View
                             android:id="@+id/detail_line_second"
                             android:layout_width="195dp"
-                            android:layout_height="0.5dp"
+                            android:layout_height="1dp"
                             android:layout_below="@+id/detail_job_second"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:background="@drawable/detail_line"
                             />
 
@@ -501,10 +502,10 @@
                         <View
                             android:id="@+id/detail_faculty_line_second"
                             android:layout_width="195dp"
-                            android:layout_height="0.5dp"
+                            android:layout_height="1dp"
                             android:layout_below="@+id/detail_faculty_second"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:background="@drawable/detail_line"
                             />
                     </RelativeLayout>
