@@ -30,10 +30,16 @@ class ResultActivity : AppCompatActivity() {
         val digitalScore = intent.getIntExtra("Digital_KEY", Int.MIN_VALUE)
 
 
+        println(europeScore)
+        println(asiaScore)
+        println(universityScore)
+        println(itScore)
+        println(digitalScore)
 
 
 
-
+        resultMajor1 = findViewById(R.id.result_1)
+        resultMajor2 = findViewById(R.id.result_2)
 
 
         val scoreMap = mapOf (
@@ -44,20 +50,57 @@ class ResultActivity : AppCompatActivity() {
             "Digital" to digitalScore
         )
 
-        val maxScore = scoreMap.values.maxOrNull() ?: Int.MIN_VALUE
-        val maxKeys = scoreMap.filterValues { it == maxScore }.keys
+        val valueKeys = scoreMap.filterValues { it >= 5 }.keys
 
-        if (maxKeys.size > 2)
+        println("가장 큰 값을 가진 키: $valueKeys")
+        println(valueKeys)
 
 
-        maxKeys.forEach { key ->
-            when (key) {
-                "Europe" -> println("A")
-                "Asia" -> println("B")
-                "University" -> println("C")
-                "IT" -> println("IT highest score")
-                "Digital" -> println("Digital highest score")
+        if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
+            setContentView(R.layout.details_screen)
+        }
+
+        if (valueKeys.size == 1) {
+            valueKeys.forEach { key ->
+                when (key) {
+                    "Europe" -> resultMajor1.text = "유럽미주 대학"
+                    "Asia" -> resultMajor1.text = "아시아 대학"
+                    "University" -> resultMajor1.text = "상경 대학"
+                    "IT" -> resultMajor1.text = "IT 대학"
+                    "Digital" -> resultMajor1.text = "디지털미디어 대학"
+                }
             }
+        }
+
+        if (valueKeys.size == 2) {
+            val maxKey = valueKeys.maxByOrNull { key -> scoreMap[key] ?: Int.MIN_VALUE }
+            if (maxKey == "Europe")
+                resultMajor1.text = "유럽미주 대학"
+            else if (maxKey == "Asia")
+                resultMajor1.text = "아시아 대학"
+            else if (maxKey == "University")
+                resultMajor1.text = "상경 대학"
+            else if (maxKey == "IT")
+                resultMajor1.text = "IT 대학"
+            else if (maxKey == "Digital")
+                resultMajor1.text = "디지털미디어 대학"
+
+            val remainingKeys = valueKeys.toMutableSet() // 가변적인 집합으로 변환
+            maxKey?.let { remainingKeys.remove(it) }
+
+            println("가장 큰 값을 가진 키: $maxKey")
+            println("남은 키들: $remainingKeys")
+
+            if (remainingKeys.first() == "Europe")
+                resultMajor2.text = "유럽미주 대학"
+            else if (remainingKeys.first() == "Asia")
+                resultMajor2.text = "아시아 대학"
+            else if (remainingKeys.first() == "University")
+                resultMajor2.text = "상경 대학"
+            else if (remainingKeys.first() == "IT")
+                resultMajor2.text = "IT 대학"
+            else
+                resultMajor2.text = "디지털미디어 대학"
         }
 
 
@@ -65,29 +108,6 @@ class ResultActivity : AppCompatActivity() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        val numbers = listOf(europeScore, asiaScore, universityScore, itScore, digitalScore)
-        var maxNumber = Int.MIN_VALUE
-
-        for (number in numbers) {
-            if (number > maxNumber) {
-                maxNumber = number
-            }
-        }
-        val maxNumbers = numbers.filter { it == maxNumber }
-        println(maxNumbers)
 
 
 
