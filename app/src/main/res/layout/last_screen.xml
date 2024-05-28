@@ -92,32 +92,82 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="15dp"
                 >
 
                 <TextView
-                    android:id="@+id/result"
+                    android:id="@+id/result_1"
                     android:layout_width="200dp"
                     android:layout_height="29dp"
-                    android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="1dp"
+                    android:gravity="center"
                     android:text="@string/result"
                     android:textAppearance="@style/result"
                     android:fontFamily="@font/pretendard_bold"
                     >
 
                 </TextView>
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="200dp"
-                android:layout_height="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/line"
-                >
+                <View
+                    android:id="@+id/first_num"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:layout_toLeftOf="@id/result_1"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:background="@drawable/one_icon"
+                    >
+                </View>
 
+                <View
+                    android:id="@+id/line_1"
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/result_1"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:background="@drawable/line"
+                    >
+
+                </View>
+
+                <TextView
+                    android:id="@+id/result_2"
+                    android:layout_width="200dp"
+                    android:layout_height="29dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:layout_below="@id/line_1"
+                    android:text="@string/result"
+                    android:textAppearance="@style/result"
+                    android:fontFamily="@font/pretendard_bold"
+                    >
+
+                </TextView>
+
+                <View
+                    android:id="@+id/second_num"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:layout_toLeftOf="@id/result_2"
+                    android:layout_marginTop=""
+                    android:background="@drawable/two_icon"
+                    >
+                </View>
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/result_2"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:background="@drawable/line"
+                    >
+
+                </View>
 
             </RelativeLayout>
 
