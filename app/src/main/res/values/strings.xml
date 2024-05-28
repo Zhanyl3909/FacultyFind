@@ -21,7 +21,7 @@
 
 
     <!-- Last Screen Strings -->
-    <string name="last_text_1">부산외국어대학교는 여러분과 함께 희망찬 미래를 꿈꾸고 만들어 갈 것입니다.</string>
+    <string name="last_text_1">부산외국어대학교는 여러분과 함께 희망찬\n미래를 꿈꾸고 만들어 갈 것입니다.</string>
     <string name="last_text_2">전공 역량 검사에서 나타난 역량은 ?</string>
     <string name="last_text_3">으로 두드러지는 것으로 확인됩니다. 보다 상세한 내용으로 나만의 학과를 확인해보세요 !</string>
     <string name="button_last">상세 보기</string>
@@ -36,8 +36,8 @@
 
 
     <!--  Fail Screen Strings  -->
-    <string name="return_text_1">전공 역량 검사가 제대로 측정되지 않았습니다. </string>
-    <string name="return_text_2">다시 한번 질문지를 꼼꼼히 살펴보신 후 신중히 재검사를 진행해주시길 바랍니다.</string>
+    <string name="return_text_1">전공 역량 검사가 제대로\n측정되지 않았습니다. </string>
+    <string name="return_text_2">다시 한번 질문지를 꼼꼼히 살펴보신 후\n신중히 재검사를 진행해주시길 바랍니다.</string>
     <string name="return_text_button">재검사 하기</string>
 
 

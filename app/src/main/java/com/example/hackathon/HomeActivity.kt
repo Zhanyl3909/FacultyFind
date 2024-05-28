@@ -189,7 +189,6 @@ class HomeActivity : AppCompatActivity() {
     }
     private fun showResultScreen() {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)
-
         intent.putExtra("Europe_KEY", europe.sumScore())
         intent.putExtra("Asia_KEY", asia.sumScore())
         intent.putExtra("University_KEY", university.sumScore())
@@ -197,6 +196,7 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("Digital_KEY", digital.sumScore())
         intent.putExtra("Social_KEY", social.sumScore())
         startActivity(intent)
+        finish()
     }
 
     private fun saveScore(context: Context, sequence: Int, selectKey: Int) {
