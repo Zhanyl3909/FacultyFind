@@ -119,9 +119,16 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
+
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
     }
+    fun onClickTryAgain(view: View) {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
+
 
     @SuppressLint("SetTextI18n")
     private fun setQuestion() {  //text 표시
