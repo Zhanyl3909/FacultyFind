@@ -48,6 +48,8 @@ class DetailsActivity : AppCompatActivity() {
 
 
         titleForDetails1 = findViewById(R.id.details_faculty_text)
+        mainForDetails1 = findViewById(R.id.result_1)
+
         titleForDetails1.text = intent.getStringExtra("DETAIL_TEXT_title1")
         mainForDetails1.text = intent.getStringExtra("DETAIL_TEXT_title1")
 
@@ -61,6 +63,8 @@ class DetailsActivity : AppCompatActivity() {
             secondResult.visibility = View.GONE;
         } else if (majorCount == 2) {
             titleForDetails2 = findViewById(R.id.details_faculty_text_second)
+            mainForDetails2 = findViewById(R.id.result_second)
+
             titleForDetails2.text = intent.getStringExtra("DETAIL_TEXT_title2")
             mainForDetails2.text = intent.getStringExtra("DETAIL_TEXT_title2")
 

@@ -3,6 +3,8 @@ package com.example.hackathon
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var resultMajor2: TextView
 
     private lateinit var goToDetails: RelativeLayout
+    private lateinit var secondMajorResult: LinearLayout
 
     private lateinit var detailText1: String
     private lateinit var detailText2: String
@@ -37,8 +40,9 @@ class ResultActivity : AppCompatActivity() {
 
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
-        goToDetails = findViewById(R.id.details_view_button)
 
+        goToDetails = findViewById(R.id.details_view_button)
+        secondMajorResult = findViewById(R.id.second_major_result)
 
         val scoreMap = mapOf (
             "Europe" to europeScore,
@@ -59,6 +63,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         if (valueKeys.size == 1) {
+            secondMajorResult.visibility = View.GONE;
             valueKeys.forEach { key ->
                 when (key) {
                     "Europe" -> resultMajor1.text = "유럽미주 대학"
