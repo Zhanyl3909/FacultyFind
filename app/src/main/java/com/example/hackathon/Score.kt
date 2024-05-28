@@ -2,18 +2,18 @@ package com.example.hackathon
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
-class Score : AppCompatActivity(){
+class Score : Fragment(R.layout.main_screen) {
 
-    var major: Int = 0
-    var whatSelectRadioInt: Int = 0
-    public fun addTheScore() {
-        if (whatSelectRadioInt == 2) {
-            major += 2
-        } else if (whatSelectRadioInt == 1) {
-            major += 1
+    var majorScore: Int = 0
+    public fun addTheScore(radiobuttonID: Int) {
+        if (radiobuttonID == R.id.option1) {
+            majorScore += 2
+        } else if (radiobuttonID == R.id.option2) {
+            majorScore += 1
         } else {
-            major += 0
+            majorScore += 0
         }
     }
 }

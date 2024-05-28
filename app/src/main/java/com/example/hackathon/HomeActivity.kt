@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RadioGroup
 import android.widget.RelativeLayout
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,11 @@ import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
 
-    private val score = Score()
+    private val europe = Score()
+    private val asia = Score()
+    private val university = Score()
+    private val it = Score()
+    private val digital = Score()
 
     private lateinit var mProgress: ProgressBar
 
@@ -103,6 +108,7 @@ class HomeActivity : AppCompatActivity() {
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
 
                 if (currentQuestionIndex == 19) {
+                    findMaxScore()
                     showResultScreen()
                 }
             }
@@ -133,16 +139,20 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToScore (_major: Int, radiobuttonID: Int) {
-        val whatSelectRadio = radiobuttonID
-        score.major = _major
-        if (whatSelectRadio == R.id.option1) {
-            score.whatSelectRadioInt = 2
-        } else if (whatSelectRadio == R.id.option1) {
-            score.whatSelectRadioInt = 1
-        } else {
-            score.whatSelectRadioInt = 0
+        when (_major) {
+            europeScore -> europe.addTheScore(radiobuttonID)
+            asiaScore -> asia.addTheScore(radiobuttonID)
+            universityScore -> university.addTheScore(radiobuttonID)
+            itScore -> it.addTheScore(radiobuttonID)
+            digitalScore -> digital.addTheScore(radiobuttonID)
         }
-        score.addTheScore()
+    }
+
+    private fun findMaxScore() {
+        val numbers = listOf(europe.majorScore, asia.majorScore, 3, 4, 5)
+        val maxNumber = numbers.reduce { max, number -> if (number > max) number else max }
+
+        println("가장 큰 값: $maxNumber")
     }
 
     private fun goToBackQuestion() {
