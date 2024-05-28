@@ -28,15 +28,13 @@ class ResultActivity : AppCompatActivity() {
         val universityScore = intent.getIntExtra("University_KEY", Int.MIN_VALUE)
         val itScore = intent.getIntExtra("IT_KEY", Int.MIN_VALUE)
         val digitalScore = intent.getIntExtra("Digital_KEY", Int.MIN_VALUE)
-
+        val socialScore = intent.getIntExtra("Social_KEY", Int.MIN_VALUE)
 
         println(europeScore)
         println(asiaScore)
         println(universityScore)
         println(itScore)
         println(digitalScore)
-
-
 
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
@@ -47,7 +45,8 @@ class ResultActivity : AppCompatActivity() {
             "Asia" to asiaScore,
             "University" to universityScore,
             "IT" to itScore,
-            "Digital" to digitalScore
+            "Digital" to digitalScore,
+            "Social" to socialScore
         )
 
         val valueKeys = scoreMap.filterValues { it >= 5 }.keys
@@ -68,6 +67,7 @@ class ResultActivity : AppCompatActivity() {
                     "University" -> resultMajor1.text = "상경 대학"
                     "IT" -> resultMajor1.text = "IT 대학"
                     "Digital" -> resultMajor1.text = "디지털미디어 대학"
+                    "Social" -> resultMajor1.text = "사회과학 대학"
                 }
             }
         }
@@ -84,6 +84,8 @@ class ResultActivity : AppCompatActivity() {
                 resultMajor1.text = "IT 대학"
             else if (maxKey == "Digital")
                 resultMajor1.text = "디지털미디어 대학"
+            else
+                resultMajor1.text = "사회과학 대학"
 
             val remainingKeys = valueKeys.toMutableSet() // 가변적인 집합으로 변환
             maxKey?.let { remainingKeys.remove(it) }
@@ -99,8 +101,10 @@ class ResultActivity : AppCompatActivity() {
                 resultMajor2.text = "상경 대학"
             else if (remainingKeys.first() == "IT")
                 resultMajor2.text = "IT 대학"
-            else
+            else if (remainingKeys.first() == "Digital")
                 resultMajor2.text = "디지털미디어 대학"
+            else
+                resultMajor1.text = "사회과학 대학"
         }
 
 

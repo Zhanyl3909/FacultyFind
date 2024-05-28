@@ -13,11 +13,12 @@ import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
 
-    val europe = Score()
-    val asia = Score()
-    val university = Score()
-    val it = Score()
-    val digital = Score()
+    private val europe = Score()
+    private val asia = Score()
+    private val university = Score()
+    private val it = Score()
+    private val digital = Score()
+    private val social = Score()
     
 
     private lateinit var mProgress: ProgressBar
@@ -56,7 +57,12 @@ class HomeActivity : AppCompatActivity() {
         Pair("스토리텔링이나 시나리오 작성에 흥미를 가지며, 자신의 이야기를 창작하는 것을 좋아한다.","digital"),
         Pair("영상이나 사진을 통해 메시지를 전달하거나 표현하는 것에 관심이 있다. ","digital"),
         Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.","digital"),
-        Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.","digital")
+        Pair("다양한 예술 형식에 관심이 있어서 미술전이나 영화제를 자주 찾아다닌다.","digital"),
+
+        Pair("사회적 변화와 인간 관계에 대한 이해를 통해 세계를 더 나은 곳으로 만들고자 한다.","social"),
+        Pair("데이터 분석과 통계를 활용하여 사회현상을 탐구하고 해석하는 것에 흥미를 느낀다.","social"),
+        Pair("다양한 문화와 역사에 대해 배우고 이해하는 것을 즐기며, 사회 다양성에 관심이 많다.","social"),
+        Pair("새로운 아이디어나 사회 문제에 대해 논의하고 탐구하는 것을 즐긴다.","social")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -145,6 +151,8 @@ class HomeActivity : AppCompatActivity() {
             "university" -> university.addTheScore(radiobuttonID)
             "it" -> it.addTheScore(radiobuttonID)
             "digital" -> digital.addTheScore(radiobuttonID)
+            "social" -> social.addTheScore(radiobuttonID)
+
         }
     }
 
@@ -164,6 +172,7 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("University_KEY", university.majorScore)
         intent.putExtra("IT_KEY", it.majorScore)
         intent.putExtra("Digital_KEY", digital.majorScore)
+        intent.putExtra("Social_KEY", social.majorScore)
         startActivity(intent)
     }
 
