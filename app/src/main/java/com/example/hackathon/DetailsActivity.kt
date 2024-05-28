@@ -29,14 +29,17 @@ class DetailsActivity : AppCompatActivity() {
             "Social" to socialScore
         )
 
+        val detailText1 = intent.getStringExtra("DETAIL_TEXT1")
+        val titleForDetails1 = findViewById<TextView>(R.id.details_faculty_text)
+        titleForDetails1.text = detailText1
 
-
+//        val detailText2 = intent.getStringExtra("DETAIL_TEXT1")
+//        val titleForDetails2 = findViewById<TextView>(R.id.details_faculty_text_second)
+//        titleForDetails2.text = detailText2
 
         val detailText = intent.getStringExtra("DETAIL_TEXT")
         val textViewForDetails = findViewById<TextView>(R.id.textView_forDetails)
         textViewForDetails.text = detailText
-
-
     }
 
 

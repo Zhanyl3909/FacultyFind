@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         // Use Handler directly on the main thread
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@MainActivity, HomeActivity::class.java)
+            val intent = Intent(this@MainActivity, StartActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)

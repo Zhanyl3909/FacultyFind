@@ -199,19 +199,19 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun saveScore(context: Context, sequence: Int, selectKey: Int) {
+    private fun saveScore(context: Context, sequence: Int, selectKey: Int) {
         val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt(sequence.toString(), selectKey)
         editor.apply()
     }
 
-    fun loadScore(context: Context, sequence: Int): Int {
+    private fun loadScore(context: Context, sequence: Int): Int {
         val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
         return sharedPreferences.getInt(sequence.toString(), 0) // 기본값으로 0을 반환
     }
 
-    fun resetScores(context: Context) {
+    private fun resetScores(context: Context) {
         val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.clear() // 모든 데이터 삭제
