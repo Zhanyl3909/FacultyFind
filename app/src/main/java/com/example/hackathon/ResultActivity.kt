@@ -108,6 +108,13 @@ class ResultActivity : AppCompatActivity() {
             val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
             val detailText = getDetailTextForResult(resultMajor1.text.toString())
             intent.putExtra("DETAIL_TEXT", detailText)
+
+            intent.putExtra("Europe_String", "유럽미주 대학")
+            intent.putExtra("Asia_String", "아시아 대학")
+            intent.putExtra("University_String", "상경 대학")
+            intent.putExtra("IT_String", "IT 대학")
+            intent.putExtra("Digital_String", "디지털미디어 대학")
+            intent.putExtra("Social_String", "사회과학 대학")
             startActivity(intent)
         }
 
@@ -115,6 +122,9 @@ class ResultActivity : AppCompatActivity() {
 
 
     }
+
+
+
     private fun getDetailTextForResult(result: String): String {
         return when (result) {
             "IT 대학" -> getString(R.string.details_for_IT)
@@ -127,6 +137,9 @@ class ResultActivity : AppCompatActivity() {
             else -> ""
         }
     }
+
+
+
 
 }
 
