@@ -1,6 +1,7 @@
 package com.example.hackathon
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -102,8 +103,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
+                saveScore(this, currentQuestionIndex, selectedOptionId)
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
+                radioGroup.check(loadScore(this, currentQuestionIndex))
 
                 if (currentQuestionIndex == 19) {
                     showResultScreen()
@@ -144,6 +147,16 @@ class HomeActivity : AppCompatActivity() {
         backButton.visibility = View.VISIBLE
     }
 
+    private fun goToBackQuestion() {
+        currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
+        radioGroup.clearCheck()
+        if (currentQuestionIndex < 0) {
+            currentQuestionIndex += questions.size
+        }
+        setQuestion()
+        radioGroup.check(loadScore(this, currentQuestionIndex))
+    }
+
     private fun goToScore (major: String, radiobuttonID: Int) {
         when (major) {
             "europe" -> europe.addTheScore(radiobuttonID)
@@ -152,18 +165,7 @@ class HomeActivity : AppCompatActivity() {
             "it" -> it.addTheScore(radiobuttonID)
             "digital" -> digital.addTheScore(radiobuttonID)
             "social" -> social.addTheScore(radiobuttonID)
-
         }
-    }
-
-
-
-    private fun goToBackQuestion() {
-        currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
-        if (currentQuestionIndex < 0) {
-            currentQuestionIndex += questions.size
-        }
-        setQuestion()
     }
     private fun showResultScreen() {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)
@@ -175,6 +177,21 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("Social_KEY", social.majorScore)
         startActivity(intent)
     }
+
+    fun saveScore(context: Context, sequence: Int, selectKey: Int) {
+        val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(sequence.toString(), selectKey)
+        editor.apply()
+    }
+
+    fun loadScore(context: Context, sequence: Int): Int {
+        val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
+        return sharedPreferences.getInt(sequence.toString(), 0) // 기본값으로 0을 반환
+    }
+
+
+
 
 
 }

@@ -39,7 +39,6 @@ class ResultActivity : AppCompatActivity() {
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
 
-
         val scoreMap = mapOf (
             "Europe" to europeScore,
             "Asia" to asiaScore,
@@ -53,7 +52,6 @@ class ResultActivity : AppCompatActivity() {
 
         println("가장 큰 값을 가진 키: $valueKeys")
         println(valueKeys)
-
 
         if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
             setContentView(R.layout.details_screen)
