@@ -16,6 +16,8 @@ import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mProgress: ProgressBar
+    private var mProgressStatus = 1
+    private var i: Int = 1
 
     private lateinit var backButton: RelativeLayout
     private lateinit var nextButton: RelativeLayout
@@ -93,18 +95,22 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
+
                 }
+                if (currentQuestionIndex == 19) showResultScreen()
                 goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
             }
         }
 
+
         backButton.setOnClickListener {
             if (currentQuestionIndex > 0) {
                 goToBackQuestion()
             }
         }
+    
 
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
@@ -129,6 +135,12 @@ class HomeActivity : AppCompatActivity() {
             currentQuestionIndex += questions.size
         }
         setQuestion()
+    }
+    private fun showResultScreen() {
+
+        setContentView(R.layout.last_screen)
+
+
     }
 
 
