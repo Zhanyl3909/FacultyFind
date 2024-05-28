@@ -42,7 +42,6 @@ class HomeActivity : AppCompatActivity() {
 
         setQuestion()
 
-
         // Start a thread to update the progress bar
         Thread {
             while (mProgressStatus < 25) {
@@ -66,8 +65,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         nextButton.setOnClickListener {
-
-            val isSelected =  radioGroup.checkedRadioButtonId
+            val isSelected = radioGroup.checkedRadioButtonId
             if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT)
                     .show()
@@ -75,7 +73,16 @@ class HomeActivity : AppCompatActivity() {
                 goToNextQuestion()
                 }
             }
+
+        backButton.setOnClickListener {
+            goToBackQuestion()
         }
+
+
+
+
+    }
+
 
 
     private fun setQuestion() {
@@ -83,6 +90,10 @@ class HomeActivity : AppCompatActivity() {
     }
     private fun goToNextQuestion() {
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.size
+        setQuestion()
+    }
+    private fun goToBackQuestion() {
+        currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
         setQuestion()
     }
 
