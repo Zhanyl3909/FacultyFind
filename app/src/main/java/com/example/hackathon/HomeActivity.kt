@@ -21,9 +21,10 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var radioGroup: RadioGroup
 
     private lateinit var questionTextView: TextView
+    private lateinit var questionTextNumber: TextView
 
     private var currentQuestionIndex = 0
-    private val questions = listOf(
+    private val questions = listOf (
         "다양한 문화와 언어에 관심이 많아서 해외 여행이나 교환학생 프로그램에 참여하고 싶은 편이다.",
         "유럽이나 미주의 역사나 문화에 대해 탐구하고 공부하는 것을 좋아한다.",
         "외국어를 배우는 것에 열정이 있어서 언어 학습 앱이나 온라인 강의를 이용하여 새로운 언어를 익히는 것을 좋아한다."
@@ -39,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
         mProgress = findViewById(R.id.main_screen_progress_bar)
 
         questionTextView = findViewById(R.id.questionTextView)
+        questionTextNumber = findViewById(R.id.questions_no)
 
         setQuestion()
 
@@ -79,14 +81,13 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
-
-
     }
 
 
 
     private fun setQuestion() {  //text 표시
         questionTextView.text = questions[currentQuestionIndex]
+        questionTextNumber.text = "${currentQuestionIndex + 1}."
     }
     private fun goToNextQuestion() {    //바꾸는 것
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.size
