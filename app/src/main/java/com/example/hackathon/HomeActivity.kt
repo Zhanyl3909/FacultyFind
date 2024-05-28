@@ -3,6 +3,8 @@
 package com.example.hackathon
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RadioGroup
 import android.widget.RelativeLayout
@@ -69,21 +71,22 @@ class HomeActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
             val isSelected = radioGroup.checkedRadioButtonId
             if (isSelected == -1) {
-                Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT).show()
             } else {
                 goToNextQuestion()
-                }
             }
-
-        backButton.setOnClickListener {
-            goToBackQuestion()
         }
 
+        backButton.setOnClickListener {
+            if (currentQuestionIndex > 0) {
+                goToBackQuestion()
+            }
+        }
+    
 
+        // Make the prev button invisible initially
+        backButton.visibility = View.INVISIBLE
     }
-
-
 
     private fun setQuestion() {  //text 표시
         questionTextView.text = questions[currentQuestionIndex]
@@ -92,9 +95,14 @@ class HomeActivity : AppCompatActivity() {
     private fun goToNextQuestion() {    //바꾸는 것
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.size
         setQuestion()
+        // Show the back button when moving to the next question
+        backButton.visibility = View.VISIBLE
     }
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
+        if (currentQuestionIndex < 0) {
+            currentQuestionIndex += questions.size
+        }
         setQuestion()
     }
 
