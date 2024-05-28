@@ -104,7 +104,6 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="@string/result"
                     android:textAppearance="@style/result"
                     android:fontFamily="@font/pretendard_bold"
                     >
@@ -142,7 +141,6 @@
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:layout_below="@id/line_1"
-                    android:text="@string/result"
                     android:textAppearance="@style/result"
                     android:fontFamily="@font/pretendard_bold"
                     >
@@ -200,7 +198,7 @@
             >
 
             <RelativeLayout
-                android:id="@+id/next_button"
+                android:id="@+id/details_view_button"
                 android:layout_width="250dp"
                 android:layout_height="48dp"
                 android:background="@drawable/main_screen_button"
