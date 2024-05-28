@@ -100,14 +100,16 @@ class HomeActivity : AppCompatActivity() {
                 }
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
-                goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
 
                 if (currentQuestionIndex == 19) {
                     val maxMajor = findMaxScore()
                     showResultScreen(maxMajor)
+                } else {
+                    goToNextQuestion()
                 }
+
             }
         }
 
