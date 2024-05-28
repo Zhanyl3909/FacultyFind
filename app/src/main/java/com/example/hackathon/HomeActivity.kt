@@ -2,6 +2,7 @@
 
 package com.example.hackathon
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -68,23 +69,7 @@ class HomeActivity : AppCompatActivity() {
         questionTextNumberProgress = findViewById(R.id.progress1)
 
         questions = questions.shuffled()
-        setQuestion()
 
-        // Start a thread to update the progress bar
-        Thread {
-            while (mProgressStatus < 20) {
-                try {
-                    Thread.sleep(1000)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-                mProgressStatus = i++
-
-                mProgress.post {
-                    mProgress.progress = mProgressStatus
-                }
-            }
-        }.start()
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             // Enable the next button if a radio button is selected
@@ -145,8 +130,7 @@ class HomeActivity : AppCompatActivity() {
         updateProgressBar()
     }
     private fun updateProgressBar() {
-        val totalQuestions = questions.size
-        val progress = ((currentQuestionIndex + 1) / totalQuestions.toDouble() * 100).toInt()
+        val progress = currentQuestionIndex
         mProgress.progress = progress
     }
 
