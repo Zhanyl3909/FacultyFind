@@ -12,5 +12,11 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(R.layout.details_screen)
 
 
+        val detailText = intent.getStringExtra("DETAIL_TEXT")
+        val textViewForDetails = findViewById<TextView>(R.id.textView_forDetails)
+        textViewForDetails.text = detailText
     }
+
+
+
 }
