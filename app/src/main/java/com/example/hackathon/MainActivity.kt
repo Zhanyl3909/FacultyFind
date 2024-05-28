@@ -25,7 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         // Use Handler directly on the main thread
         Handler(Looper.getMainLooper()).postDelayed({
+<<<<<<< HEAD
             val intent = Intent(this@MainActivity, ProgressBarTestActivity::class.java)
+=======
+            val intent = Intent(this@MainActivity, HomeActivity::class.java)
+>>>>>>> ea027de27867e487a3ce4137e656ac3ae97e2e55
             startActivity(intent)
             finish()
         }, 2000)

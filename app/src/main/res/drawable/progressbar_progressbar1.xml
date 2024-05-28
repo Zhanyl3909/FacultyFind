@@ -7,16 +7,20 @@
         </shape>
     </item>
     <item android:id="@android:id/secondaryProgress">
-        <shape>
-            <corners android:radius="6dp" />
-            <solid android:color="#B2CCFF" />
-        </shape>
+        <clip>
+            <shape>
+                <corners android:radius="6dp" />
+                <solid android:color="#000000" />
+            </shape>
+        </clip>
     </item>
     <item android:id="@android:id/progress" >
-        <shape>
-            <corners android:radius="6dp" />
-            <solid android:color="#EAEAEA" />
-        </shape>
+        <clip>
+            <shape>
+                <corners android:radius="6dp" />
+                <solid android:color="#636466" />
+            </shape>
+        </clip>
     </item>
 </layer-list>
 

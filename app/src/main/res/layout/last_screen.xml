@@ -104,7 +104,9 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="1dp"
                     android:text="@string/result"
-                    android:textAppearance="@style/result">
+                    android:textAppearance="@style/result"
+                    android:fontFamily="@font/pretendard_bold"
+                    >
 
                 </TextView>
             </RelativeLayout>
