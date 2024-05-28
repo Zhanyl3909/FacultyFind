@@ -94,9 +94,9 @@ class HomeActivity : AppCompatActivity() {
                 }
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
-                goToNextQuestion()
             }
         }
+
 
         backButton.setOnClickListener {
             if (currentQuestionIndex > 0) {
@@ -131,8 +131,12 @@ class HomeActivity : AppCompatActivity() {
         updateProgressBar()
     }
     private fun updateProgressBar() {
-        val progress = currentQuestionIndex
+        val totalQuestions = questions.size
+        val progress = ((currentQuestionIndex + 1) / totalQuestions.toDouble() * 100).toInt()
         mProgress.progress = progress
+        
     }
+
+
 
 }
