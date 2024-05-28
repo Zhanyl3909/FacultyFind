@@ -1,24 +1,20 @@
 package com.example.hackathon
 
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.View.OnTouchListener
 import android.widget.ProgressBar
 import android.widget.RadioGroup
 import android.widget.RelativeLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.core.view.isVisible
 
 class ProgressBarTestActivity : AppCompatActivity() {
-    private var mProgress: ProgressBar? = null
+    private lateinit var mProgress: ProgressBar
     private var mProgressStatus = 0
-    var i: Int = 0
+    private var i: Int = 0
 
-    lateinit var backButton: RelativeLayout // 회원가입 버튼
-    lateinit var nextButton: RelativeLayout // 회원가입 버튼
-    var radioGroup = findViewById<RadioGroup>(R.id.options)
+    private lateinit var backButton: RelativeLayout
+    private lateinit var nextButton: RelativeLayout
+    private lateinit var radioGroup: RadioGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,39 +22,37 @@ class ProgressBarTestActivity : AppCompatActivity() {
 
         backButton = findViewById(R.id.back_button)
         nextButton = findViewById(R.id.next_button)
+        radioGroup = findViewById(R.id.options)
+        mProgress = findViewById(R.id.main_screen_progress_bar)
 
+        nextButton.isEnabled = false // Initially disable the next button
 
-
-
-
-
-        mProgress = findViewById<View>(R.id.main_screen_progress_bar) as ProgressBar
-
+        // Start a thread to update the progress bar
         Thread {
             while (mProgressStatus < 100) {
                 try {
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
+                    e.printStackTrace()
                 }
                 mProgressStatus = i++
 
-                mProgress!!.post { mProgress!!.progress = mProgressStatus }
+                mProgress.post {
+                    mProgress.progress = mProgressStatus
+                    if (mProgressStatus >= 100) {
+                        mProgress.isVisible = false // Hide the progress bar when done
+                    }
+                }
             }
         }.start()
 
-
-
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            nextButton.isEnabled = checkedId != -1 // 라디오 버튼이 선택되면 버튼 활성화
-            nextButton.setBackgroundResource(R.drawable.main_screen_button)
+            nextButton.isEnabled = checkedId != -1 // Enable the next button if a radio button is selected
+            if (checkedId != -1) {
+                nextButton.setBackgroundResource(R.drawable.custom_radio_checked)
+            } else {
+                nextButton.setBackgroundResource(R.drawable.custom_radio_unchecked)
+            }
         }
-
-
-
-
-    }
-
-    companion object {
-        private const val PROGRESS = 0x1
     }
 }
