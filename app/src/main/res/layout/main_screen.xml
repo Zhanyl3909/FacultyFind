@@ -91,7 +91,7 @@
                     android:textAppearance="@style/main_screen_questions" />
 
                 <TextView
-                    android:id="@+id/questions"
+                    android:id="@+id/questionTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
