@@ -63,7 +63,8 @@ class HomeActivity : AppCompatActivity() {
         }.start()
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            nextButton.isEnabled = checkedId != -1 // Enable the next button if a radio button is selected
+            nextButton.isEnabled =
+                checkedId != -1 // Enable the next button if a radio button is selected
             nextButton.setBackgroundResource(R.drawable.main_screen_button)
         }
 
