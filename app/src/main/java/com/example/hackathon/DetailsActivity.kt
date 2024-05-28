@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hackathon.R
@@ -18,6 +19,8 @@ class DetailsActivity : AppCompatActivity() {
     lateinit var textViewForDetails2: TextView
     lateinit var textViewForDetailsMajor1: TextView
     lateinit var textViewForDetailsMajor2: TextView
+
+    lateinit var backButton: RelativeLayout
 
     lateinit var secondResult: LinearLayout
 
@@ -46,6 +49,7 @@ class DetailsActivity : AppCompatActivity() {
 
         val majorCount = intent.getIntExtra("Major_Count", Int.MIN_VALUE)
 
+        backButton = findViewById(R.id.back_button_details)
 
         titleForDetails1 = findViewById(R.id.details_faculty_text)
         mainForDetails1 = findViewById(R.id.result_1)
@@ -73,6 +77,10 @@ class DetailsActivity : AppCompatActivity() {
 
             textViewForDetailsMajor2 = findViewById(R.id.detail_faculty_second)
             textViewForDetailsMajor2.text = intent.getStringExtra("DETAIL_TEXT_Major2")
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
 
 

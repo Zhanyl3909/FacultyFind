@@ -59,7 +59,8 @@ class ResultActivity : AppCompatActivity() {
         println(valueKeys)
 
         if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
-            setContentView(R.layout.welcome_screen)
+            val intent = Intent(this@ResultActivity, FailActivity::class.java)
+            startActivity(intent)
         }
 
         if (valueKeys.size == 1) {
