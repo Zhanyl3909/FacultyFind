@@ -103,11 +103,10 @@ class HomeActivity : AppCompatActivity() {
                 }
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
-                radioGroup.clearCheck()
-                nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
 
                 if (loadScore(this, currentQuestionIndex) == 0) {
                     radioGroup.clearCheck()
+                    nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
                 } else {
                     radioGroup.check(loadScore(this, currentQuestionIndex))
                 }
