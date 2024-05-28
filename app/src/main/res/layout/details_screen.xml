@@ -210,7 +210,7 @@
                         <TextView
                             android:id="@+id/detail_job"
                             android:layout_width="186dp"
-                            android:layout_height="60dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="50dp"
@@ -268,7 +268,7 @@
                         <TextView
                             android:id="@+id/detail_faculty"
                             android:layout_width="186dp"
-                            android:layout_height="60dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="50dp"
                             android:textAlignment="textStart"
@@ -431,7 +431,7 @@
                         <TextView
                             android:id="@+id/detail_job_second"
                             android:layout_width="186dp"
-                            android:layout_height="60dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="50dp"
@@ -489,7 +489,7 @@
                         <TextView
                             android:id="@+id/detail_faculty_second"
                             android:layout_width="186dp"
-                            android:layout_height="60dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="50dp"
                             android:fontFamily="@font/pretendard_light"
@@ -510,6 +510,41 @@
                     </RelativeLayout>
                 </RelativeLayout>
                 </LinearLayout>
+            </LinearLayout>
+
+<!--     뒤로 가기 버튼       -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:gravity="center_horizontal"
+                >
+            <RelativeLayout
+                android:id="@+id/back_button_details"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:onClick="backtoButton"
+                android:background="@drawable/main_screen_button"
+                android:clickable="true"
+                >
+                <View
+                    android:layout_width="23dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/arrow_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_back"
+                    android:textAppearance="@style/button_back"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/pretendard_bold"
+                    />
+            </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
