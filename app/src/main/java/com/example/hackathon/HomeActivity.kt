@@ -103,10 +103,11 @@ class HomeActivity : AppCompatActivity() {
                 if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
                 }
-                val selectedOptionId = radioGroup.checkedRadioButtonId
-                goToScore(questions[currentQuestionIndex].second, selectedOptionId)
 
-                if (loadScore(this, currentQuestionIndex) == 0) {
+                val selectedOptionId = radioGroup.checkedRadioButtonId
+                goAddToScore(questions[currentQuestionIndex].second, selectedOptionId)
+
+                if (loadScore(this, currentQuestionIndex+1) == 0) {
                     radioGroup.clearCheck()
                     nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
                 } else {
@@ -157,15 +158,16 @@ class HomeActivity : AppCompatActivity() {
 
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
-        radioGroup.clearCheck()
         if (currentQuestionIndex < 0) {
             currentQuestionIndex += questions.size
         }
         setQuestion()
+        goMinusToScore(questions[currentQuestionIndex].second)
+        radioGroup.clearCheck()
         radioGroup.check(loadScore(this, currentQuestionIndex))
     }
 
-    private fun goToScore (major: String, radiobuttonID: Int) {
+    private fun goAddToScore (major: String, radiobuttonID: Int) {
         when (major) {
             "europe" -> europe.addTheScore(radiobuttonID)
             "asia" -> asia.addTheScore(radiobuttonID)
@@ -175,14 +177,25 @@ class HomeActivity : AppCompatActivity() {
             "social" -> social.addTheScore(radiobuttonID)
         }
     }
+    private fun goMinusToScore (major: String) {
+        when (major) {
+            "europe" -> europe.minusTheScore()
+            "asia" -> asia.minusTheScore()
+            "university" -> university.minusTheScore()
+            "it" -> it.minusTheScore()
+            "digital" -> digital.minusTheScore()
+            "social" -> social.minusTheScore()
+        }
+    }
     private fun showResultScreen() {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)
-        intent.putExtra("Europe_KEY", europe.majorScore)
-        intent.putExtra("Asia_KEY", asia.majorScore)
-        intent.putExtra("University_KEY", university.majorScore)
-        intent.putExtra("IT_KEY", it.majorScore)
-        intent.putExtra("Digital_KEY", digital.majorScore)
-        intent.putExtra("Social_KEY", social.majorScore)
+
+        intent.putExtra("Europe_KEY", europe.sumScore())
+        intent.putExtra("Asia_KEY", asia.sumScore())
+        intent.putExtra("University_KEY", university.sumScore())
+        intent.putExtra("IT_KEY", it.sumScore())
+        intent.putExtra("Digital_KEY", digital.sumScore())
+        intent.putExtra("Social_KEY", social.sumScore())
         startActivity(intent)
     }
 
