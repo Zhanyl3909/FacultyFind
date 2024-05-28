@@ -31,7 +31,6 @@ class HomeActivity : AppCompatActivity() {
     private var itScore = 0
     private var digitalScore = 0
 
-
     private var currentQuestionIndex = 0
     private var questions = listOf (
         Pair("다양한 문화와 언어에 관심이 많아서 해외 여행이나 교환학생 프로그램에 참여하고 싶은 편이다.",europeScore),
