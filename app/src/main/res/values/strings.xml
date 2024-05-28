@@ -28,5 +28,9 @@
     <string name="result">언어, 의사소통 역량</string>
 
     <!-- details Screen Strings -->
-    <string name="detail_text">안전,위기극복 능력</string>
+    <string name="result_detail_title">안전,위기극복 능력</string>
+    <string name="result_detail_text_1">안전 및 위기 극복 역량이 뛰어난 당신!</string>
+    <string name="result_detail_text_2">만인의 히러로를 꿈꾸는 당신, 다른 사람들이 두려워하는 각종 재난, 재해에 대한 관심이 많으며, 이를 예방하는 대처하는 기술을 습득할 수 있는 역량이 뛰어나네요! </string>
+    <string name="result_detail_job">소방기술사, 소방시설관리사,재난안전연구원, 손해보험사, 위험물기능사, 보건·재난관리사, 안전기술사, 산업안전기사</string>
+    <string name="result_datail_faculty">소방방재학과, 소방행정학과, 산업안전공학과, 드론로봇융합학과, 경찰학과</string>
 </resources>
