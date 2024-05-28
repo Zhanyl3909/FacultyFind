@@ -16,8 +16,6 @@ import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mProgress: ProgressBar
-    private var mProgressStatus = 1
-    private var i: Int = 1
 
     private lateinit var backButton: RelativeLayout
     private lateinit var nextButton: RelativeLayout
@@ -27,32 +25,39 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var questionTextNumber: TextView
     private lateinit var questionTextNumberProgress: TextView
 
+    private var europeScore = 0
+    private var asiaScore = 0
+    private var universityScore  = 0
+    private var itScore = 0
+    private var digitalScore = 0
+
+
     private var currentQuestionIndex = 0
     private var questions = listOf (
-        Pair("다양한 문화와 언어에 관심이 많아서 해외 여행이나 교환학생 프로그램에 참여하고 싶은 편이다.",""),
-        Pair("유럽이나 미주의 역사나 문화에 대해 탐구하고 공부하는 것을 좋아한다.",""),
-        Pair("외국어를 배우는 것에 열정이 있어서 언어 학습 앱이나 온라인 강의를 이용하여 새로운 언어를 익히는 것을 좋아한다.",""),
-        Pair("국제 관계나 다문화 사회에 대해 관심을 가지고, 세계적인 이슈에 대해 논의하는 것을 좋아한다.",""),
+        Pair("다양한 문화와 언어에 관심이 많아서 해외 여행이나 교환학생 프로그램에 참여하고 싶은 편이다.",europeScore),
+        Pair("유럽이나 미주의 역사나 문화에 대해 탐구하고 공부하는 것을 좋아한다.",europeScore),
+        Pair("외국어를 배우는 것에 열정이 있어서 언어 학습 앱이나 온라인 강의를 이용하여 새로운 언어를 익히는 것을 좋아한다.",europeScore),
+        Pair("국제 관계나 다문화 사회에 대해 관심을 가지고, 세계적인 이슈에 대해 논의하는 것을 좋아한다.",europeScore),
 
-        Pair("아시아 문화나 역사에 대한 이해와 관심이 많아서 아시아 국가들을 여행하고 싶은 편이다.",""),
-        Pair("아시아 지역의 경제 발전과 기술 혁신에 관심을 가지며, 그에 대한 연구나 분석을 하고 싶은 마음이 있다.",""),
-        Pair("다양한 아시아 문화 예술에 대해 관심이 있어서 전통 음악이나 미술 전시회를 자주 찾아다닌다.",""),
-        Pair("아시아 지역의 정치, 사회, 경제 문제에 대해 관심을 가지고 다양한 관점에서 이해하려고 노력하는 편이다.",""),
+        Pair("아시아 문화나 역사에 대한 이해와 관심이 많아서 아시아 국가들을 여행하고 싶은 편이다.",asiaScore),
+        Pair("아시아 지역의 경제 발전과 기술 혁신에 관심을 가지며, 그에 대한 연구나 분석을 하고 싶은 마음이 있다.",asiaScore),
+        Pair("다양한 아시아 문화 예술에 대해 관심이 있어서 전통 음악이나 미술 전시회를 자주 찾아다닌다.",asiaScore),
+        Pair("아시아 지역의 정치, 사회, 경제 문제에 대해 관심을 가지고 다양한 관점에서 이해하려고 노력하는 편이다.",asiaScore),
 
-        Pair("경제나 비즈니스에 관심이 많아서 주식 시장이나 금융 상품에 대한 정보를 찾아보는 편이다.",""),
-        Pair("계획을 세우고 그에 따라 행동하는 것을 선호하는 편이다.",""),
-        Pair("경제 문제에 대해 다양한 관점에서 바라보고 그에 대한 해결책을 고민하는 것을 즐긴다.",""),
-        Pair("현재의 경제 상황에 대해 이해하고 미래의 경제 동향을 예측하는 것에 흥미를 느낀다.",""),
+        Pair("경제나 비즈니스에 관심이 많아서 주식 시장이나 금융 상품에 대한 정보를 찾아보는 편이다.",universityScore),
+        Pair("계획을 세우고 그에 따라 행동하는 것을 선호하는 편이다.",universityScore),
+        Pair("경제 문제에 대해 다양한 관점에서 바라보고 그에 대한 해결책을 고민하는 것을 즐긴다.",universityScore),
+        Pair("현재의 경제 상황에 대해 이해하고 미래의 경제 동향을 예측하는 것에 흥미를 느낀다.",universityScore),
 
-        Pair("컴퓨터 프로그래밍이나 코딩을 배우고 응용하는 것에 흥미를 느낀다.",""),
-        Pair("새로운 기술이나 디지털 도구를 활용하여 문제를 해결하는 것을 즐기는 편이다.",""),
-        Pair("소프트웨어 개발이나 웹 디자인 등에 관심이 있어서 관련된 지식을 습득하는 것을 좋아한다.",""),
-        Pair("IT 산업의 트렌드나 기술 발전에 대해 항상 관심을 가지고 있으며, 그에 대한 정보를 주로 탐색한다.",""),
+        Pair("컴퓨터 프로그래밍이나 코딩을 배우고 응용하는 것에 흥미를 느낀다.",itScore),
+        Pair("새로운 기술이나 디지털 도구를 활용하여 문제를 해결하는 것을 즐기는 편이다.",itScore),
+        Pair("소프트웨어 개발이나 웹 디자인 등에 관심이 있어서 관련된 지식을 습득하는 것을 좋아한다.",itScore),
+        Pair("IT 산업의 트렌드나 기술 발전에 대해 항상 관심을 가지고 있으며, 그에 대한 정보를 주로 탐색한다.",itScore),
 
-        Pair("스토리텔링이나 시나리오 작성에 흥미를 가지며, 자신의 이야기를 창작하는 것을 좋아한다.",""),
-        Pair("영상이나 사진을 통해 메시지를 전달하거나 표현하는 것에 관심이 있다. ",""),
-        Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.",""),
-        Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.","")
+        Pair("스토리텔링이나 시나리오 작성에 흥미를 가지며, 자신의 이야기를 창작하는 것을 좋아한다.",digitalScore),
+        Pair("영상이나 사진을 통해 메시지를 전달하거나 표현하는 것에 관심이 있다. ",digitalScore),
+        Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.",digitalScore),
+        Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.",digitalScore)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,8 +78,8 @@ class HomeActivity : AppCompatActivity() {
 
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            nextButton.isEnabled =
-                checkedId != -1 // Enable the next button if a radio button is selected
+            // Enable the next button if a radio button is selected
+            nextButton.isEnabled = checkedId != -1
             nextButton.setBackgroundResource(R.drawable.main_screen_button)
         }
 
@@ -86,24 +91,20 @@ class HomeActivity : AppCompatActivity() {
             if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT).show()
             } else {
-                if (currentQuestionIndex < questions.size - 1) {
-                    goToNextQuestion()
-                } else {
-                    // If it's the last question, change the button text
+                if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
                 }
+                goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
             }
         }
-
 
         backButton.setOnClickListener {
             if (currentQuestionIndex > 0) {
                 goToBackQuestion()
             }
         }
-    
 
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
@@ -114,13 +115,13 @@ class HomeActivity : AppCompatActivity() {
         questionTextView.text = questions[currentQuestionIndex].first
         questionTextNumber.text = "${currentQuestionIndex + 1}."
         questionTextNumberProgress.text = (currentQuestionIndex + 1).toString()
+        mProgress.progress = currentQuestionIndex + 1
     }
     private fun goToNextQuestion() {    //바꾸는 것
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.size
         setQuestion()
         // Show the back button when moving to the next question
         backButton.visibility = View.VISIBLE
-        updateProgressBar()
     }
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
@@ -128,15 +129,7 @@ class HomeActivity : AppCompatActivity() {
             currentQuestionIndex += questions.size
         }
         setQuestion()
-        updateProgressBar()
     }
-    private fun updateProgressBar() {
-        val totalQuestions = questions.size
-        val progress = ((currentQuestionIndex + 1) / totalQuestions.toDouble() * 100).toInt()
-        mProgress.progress = progress
-        
-    }
-
 
 
 }
