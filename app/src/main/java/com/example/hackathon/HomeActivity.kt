@@ -69,11 +69,12 @@ class HomeActivity : AppCompatActivity() {
         questionTextNumberProgress = findViewById(R.id.progress1)
 
         questions = questions.shuffled()
+        setQuestion()
 
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            // Enable the next button if a radio button is selected
-            nextButton.isEnabled = checkedId != -1
+            nextButton.isEnabled =
+                checkedId != -1 // Enable the next button if a radio button is selected
             nextButton.setBackgroundResource(R.drawable.main_screen_button)
         }
 
