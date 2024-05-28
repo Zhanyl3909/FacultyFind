@@ -1,8 +1,7 @@
-
-
 package com.example.hackathon
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -97,12 +96,15 @@ class HomeActivity : AppCompatActivity() {
                 if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
                 }
-                if (currentQuestionIndex == 19) showResultScreen()
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
                 goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
+
+                if (currentQuestionIndex == 19) {
+                    showResultScreen()
+                }
             }
         }
 
@@ -133,7 +135,6 @@ class HomeActivity : AppCompatActivity() {
     private fun goToScore (_major: Int, radiobuttonID: Int) {
         val whatSelectRadio = radiobuttonID
         score.major = _major
-        score.addTheScore()
         if (whatSelectRadio == R.id.option1) {
             score.whatSelectRadioInt = 2
         } else if (whatSelectRadio == R.id.option1) {
@@ -152,10 +153,8 @@ class HomeActivity : AppCompatActivity() {
         setQuestion()
     }
     private fun showResultScreen() {
-
-        setContentView(R.layout.last_screen)
-
-
+        val intent = Intent(this@HomeActivity, ResultActivity::class.java)
+        startActivity(intent)
     }
 
 
