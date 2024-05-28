@@ -34,6 +34,7 @@ class HomeActivity : AppCompatActivity() {
     private var itScore = 0
     private var digitalScore = 0
 
+
     private var currentQuestionIndex = 0
     private var questions = listOf (
         Pair("다양한 문화와 언어에 관심이 많아서 해외 여행이나 교환학생 프로그램에 참여하고 싶은 편이다.",europeScore),
@@ -86,6 +87,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+
         //this makes change text on the last question to see the result
         nextButton.setOnClickListener {
             val isSelected = radioGroup.checkedRadioButtonId
@@ -95,6 +97,7 @@ class HomeActivity : AppCompatActivity() {
                 if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
                 }
+                if (currentQuestionIndex == 19) showResultScreen()
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
                 goToNextQuestion()
@@ -108,9 +111,9 @@ class HomeActivity : AppCompatActivity() {
                 goToBackQuestion()
             }
         }
+
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -147,6 +150,12 @@ class HomeActivity : AppCompatActivity() {
             currentQuestionIndex += questions.size
         }
         setQuestion()
+    }
+    private fun showResultScreen() {
+
+        setContentView(R.layout.last_screen)
+
+
     }
 
 
