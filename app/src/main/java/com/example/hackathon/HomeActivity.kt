@@ -104,8 +104,7 @@ class HomeActivity : AppCompatActivity() {
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
 
                 if (currentQuestionIndex == 19) {
-                    val maxMajor = findMaxScore()
-                    showResultScreen(maxMajor)
+                    showResultScreen()
                 } else {
                     goToNextQuestion()
                 }
@@ -147,11 +146,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun findMaxScore(): Int {
-        val numbers = listOf(europe.majorScore, asia.majorScore, university.majorScore, it.majorScore, digital.majorScore)
-        val maxNumber = numbers.reduce { max, number -> if (number > max) number else max }
-        return maxNumber
-    }
 
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
@@ -160,8 +154,13 @@ class HomeActivity : AppCompatActivity() {
         }
         setQuestion()
     }
-    private fun showResultScreen(maxMajor: Int) {
+    private fun showResultScreen() {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)
+        intent.putExtra("Europe_KEY", europe.majorScore)
+        intent.putExtra("Asia_KEY", asia.majorScore)
+        intent.putExtra("University_KEY", university.majorScore)
+        intent.putExtra("IT_KEY", it.majorScore)
+        intent.putExtra("Digital_KEY", digital.majorScore)
         startActivity(intent)
     }
 
