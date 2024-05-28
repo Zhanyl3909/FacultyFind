@@ -1,5 +1,6 @@
 package com.example.hackathon
 
+import DetailsActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -18,6 +19,9 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var resultMajor1: TextView
     private lateinit var resultMajor2: TextView
 
+    private lateinit var goToDetails: RelativeLayout
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,7 @@ class ResultActivity : AppCompatActivity() {
         val itScore = intent.getIntExtra("IT_KEY", Int.MIN_VALUE)
         val digitalScore = intent.getIntExtra("Digital_KEY", Int.MIN_VALUE)
 
+        goToDetails = findViewById(R.id.detail_view_button)
 
         println(europeScore)
         println(asiaScore)
@@ -57,7 +62,7 @@ class ResultActivity : AppCompatActivity() {
 
 
         if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
-            setContentView(R.layout.details_screen)
+            setContentView(R.layout.welcome_screen)
         }
 
         if (valueKeys.size == 1) {
@@ -104,16 +109,17 @@ class ResultActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
-
-
-
+        goToDetails.setOnClickListener {
+            val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
+
+
+
+
 
 }
 

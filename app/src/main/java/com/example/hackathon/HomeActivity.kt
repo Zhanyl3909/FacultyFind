@@ -1,5 +1,6 @@
 package com.example.hackathon
 
+import DetailsActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +12,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+
 class HomeActivity : AppCompatActivity() {
+
 
     val europe = Score()
     val asia = Score()
@@ -21,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
     
 
     private lateinit var mProgress: ProgressBar
+
 
     private lateinit var backButton: RelativeLayout
     private lateinit var nextButton: RelativeLayout
@@ -59,6 +63,9 @@ class HomeActivity : AppCompatActivity() {
         Pair("영화나 드라마를 감상하고 그 속에서 감정을 공감하며 즐긴다.","digital")
     )
 
+
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_screen)
@@ -67,6 +74,7 @@ class HomeActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.next_button)
         radioGroup = findViewById(R.id.options)
         mProgress = findViewById(R.id.main_screen_progress_bar)
+
 
         questionTextView = findViewById(R.id.questionTextView)
         questionTextNumber = findViewById(R.id.questions_no)
@@ -77,12 +85,13 @@ class HomeActivity : AppCompatActivity() {
         setQuestion()
 
 
+        //for view detail
+
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             // Enable the next button if a radio button is selected
             nextButton.isEnabled = checkedId != -1
             nextButton.setBackgroundResource(R.drawable.main_screen_button)
         }
-
 
 
         //this makes change text on the last question to see the result
@@ -122,6 +131,7 @@ class HomeActivity : AppCompatActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
+
 
 
     @SuppressLint("SetTextI18n")
@@ -164,8 +174,12 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("University_KEY", university.majorScore)
         intent.putExtra("IT_KEY", it.majorScore)
         intent.putExtra("Digital_KEY", digital.majorScore)
+
+        //for the details
         startActivity(intent)
     }
+
+
 
 
 }
