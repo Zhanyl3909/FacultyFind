@@ -17,6 +17,8 @@
     <string name="option3">그렇지 않다</string>
     <string name="button_next">다음 단계</string>
     <string name="button_back">이전 단계</string>
+    <string name="button_return">처음으로</string>
+
 
     <!-- Last Screen Strings -->
     <string name="last_text_1">부산외국어대학교는 여러분과 함께 희망찬 미래를 꿈꾸고 만들어 갈 것입니다.</string>
