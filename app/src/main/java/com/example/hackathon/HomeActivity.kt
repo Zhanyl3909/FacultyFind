@@ -103,9 +103,16 @@ class HomeActivity : AppCompatActivity() {
                 }
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
-                saveScore(this, currentQuestionIndex, selectedOptionId)
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
+
+                if (loadScore(this, currentQuestionIndex) == 0) {
+                    radioGroup.clearCheck()
+                } else {
+                    radioGroup.check(loadScore(this, currentQuestionIndex))
+                }
+
+                saveScore(this, currentQuestionIndex, selectedOptionId)
 
                 if (currentQuestionIndex == 19) {
                     showResultScreen()
@@ -188,8 +195,6 @@ class HomeActivity : AppCompatActivity() {
         val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
         return sharedPreferences.getInt(sequence.toString(), 0) // 기본값으로 0을 반환
     }
-
-
 
 
 
