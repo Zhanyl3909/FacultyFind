@@ -114,27 +114,23 @@ class ResultActivity : AppCompatActivity() {
         goToDetails.setOnClickListener {
             val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
 
-                intent.putExtra("DETAIL_TEXT1", detailText1)
+                intent.putExtra("DETAIL_TEXT_title1", detailText1)
             if (valueKeys.size == 2) {
-                intent.putExtra("DETAIL_TEXT2", detailText2)
+                intent.putExtra("DETAIL_TEXT_title2", detailText2)
             }
 
             val detailText = getDetailTextForResult(resultMajor1.text.toString())
             intent.putExtra("DETAIL_TEXT", detailText)
+            val detailTextMajor = getDetailTextForResultMajor(resultMajor1.text.toString())
+            intent.putExtra("DETAIL_TEXT_Major", detailTextMajor)
 
-            intent.putExtra("Europe_String", "유럽미주 대학")
-            intent.putExtra("Asia_String", "아시아 대학")
-            intent.putExtra("University_String", "상경 대학")
-            intent.putExtra("IT_String", "IT 대학")
-            intent.putExtra("Digital_String", "디지털미디어 대학")
-            intent.putExtra("Social_String", "사회과학 대학")
             startActivity(intent)
         }
 
     }
 
 
-    private fun getDetailTextForResult(result: String): String {
+    private fun getDetailTextForResult (result: String): String {
         return when (result) {
             "IT 대학" -> getString(R.string.details_for_IT)
             "디지털미디어 대학" -> getString(R.string.details_for_digitalMedia)
@@ -142,7 +138,18 @@ class ResultActivity : AppCompatActivity() {
             "상경 대학" -> getString(R.string.details_for_sang)
             "아시아 대학" -> getString(R.string.details_for_asia)
             "유럽미주 대학" -> getString(R.string.details_for_europe)
+            else -> ""
+        }
+    }
 
+    private fun getDetailTextForResultMajor (result: String): String {
+        return when (result) {
+            "IT 대학" -> getString(R.string.details_for_IT)
+            "디지털미디어 대학" -> getString(R.string.details_for_digitalMedia)
+            "사회과학 대학" -> getString(R.string.details_for_society)
+            "상경 대학" -> getString(R.string.details_for_sang)
+            "아시아 대학" -> getString(R.string.details_for_asia)
+            "유럽미주 대학" -> getString(R.string.details_for_europe)
             else -> ""
         }
     }

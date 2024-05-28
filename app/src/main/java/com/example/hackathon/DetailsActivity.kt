@@ -13,33 +13,33 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.details_screen)
 
-        val europeScore = intent.getStringExtra("Europe_String")
-        val asiaScore = intent.getStringExtra("Asia_String")
-        val universityScore = intent.getStringExtra("University_String")
-        val itScore = intent.getStringExtra("IT_String")
-        val digitalScore = intent.getStringExtra("Digital_String")
-        val socialScore = intent.getStringExtra("Social_String")
+//        val europeScore = intent.getStringExtra("Europe_String")
+//        val asiaScore = intent.getStringExtra("Asia_String")
+//        val universityScore = intent.getStringExtra("University_String")
+//        val itScore = intent.getStringExtra("IT_String")
+//        val digitalScore = intent.getStringExtra("Digital_String")
+//        val socialScore = intent.getStringExtra("Social_String")
+//
+//        val scoreMap = mapOf (
+//            "Europe" to europeScore,
+//            "Asia" to asiaScore,
+//            "University" to universityScore,
+//            "IT" to itScore,
+//            "Digital" to digitalScore,
+//            "Social" to socialScore
+//        )
 
-        val scoreMap = mapOf (
-            "Europe" to europeScore,
-            "Asia" to asiaScore,
-            "University" to universityScore,
-            "IT" to itScore,
-            "Digital" to digitalScore,
-            "Social" to socialScore
-        )
-
-        val detailText1 = intent.getStringExtra("DETAIL_TEXT1")
         val titleForDetails1 = findViewById<TextView>(R.id.details_faculty_text)
-        titleForDetails1.text = detailText1
+        titleForDetails1.text = intent.getStringExtra("DETAIL_TEXT_title1")
 
-//        val detailText2 = intent.getStringExtra("DETAIL_TEXT1")
-//        val titleForDetails2 = findViewById<TextView>(R.id.details_faculty_text_second)
-//        titleForDetails2.text = detailText2
+        val titleForDetails2 = findViewById<TextView>(R.id.details_faculty_text_second)
+        titleForDetails2.text = intent.getStringExtra("DETAIL_TEXT_title2")
 
-        val detailText = intent.getStringExtra("DETAIL_TEXT")
         val textViewForDetails = findViewById<TextView>(R.id.textView_forDetails)
-        textViewForDetails.text = detailText
+        textViewForDetails.text = intent.getStringExtra("DETAIL_TEXT")
+
+        val textViewForDetailsMajor = findViewById<TextView>(R.id.textView_forDetails)
+        textViewForDetailsMajor.text = intent.getStringExtra("DETAIL_TEXT_Major")
     }
 
 
