@@ -106,7 +106,6 @@ class HomeActivity : AppCompatActivity() {
                 saveScore(this, currentQuestionIndex, selectedOptionId)
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
-                radioGroup.check(loadScore(this, currentQuestionIndex))
 
                 if (currentQuestionIndex == 19) {
                     showResultScreen()

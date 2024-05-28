@@ -54,7 +54,7 @@ class ResultActivity : AppCompatActivity() {
         println(valueKeys)
 
         if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
-            setContentView(R.layout.details_screen)
+            setContentView(R.layout.main_screen)
         }
 
         if (valueKeys.size == 1) {
