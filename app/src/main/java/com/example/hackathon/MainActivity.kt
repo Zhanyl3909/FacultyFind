@@ -1,6 +1,5 @@
 package com.example.hackathon
 
-import StartActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler

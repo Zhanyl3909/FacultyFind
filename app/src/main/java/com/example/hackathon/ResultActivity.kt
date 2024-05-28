@@ -14,6 +14,9 @@ class ResultActivity : AppCompatActivity() {
 
     private lateinit var goToDetails: RelativeLayout
 
+    private lateinit var detailText1: String
+    private lateinit var detailText2: String
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +69,7 @@ class ResultActivity : AppCompatActivity() {
                     "Social" -> resultMajor1.text = "사회과학 대학"
                 }
             }
+            detailText1 = resultMajor1.text.toString()
         }
 
         if (valueKeys.size == 2) {
@@ -101,11 +105,18 @@ class ResultActivity : AppCompatActivity() {
                 resultMajor2.text = "디지털미디어 대학"
             else
                 resultMajor1.text = "사회과학 대학"
+
+            detailText1 = resultMajor1.text.toString()
+            detailText2 = resultMajor2.text.toString()
         }
 
 
         goToDetails.setOnClickListener {
             val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
+
+            intent.putExtra("DETAIL_TEXT1", detailText1)
+            intent.putExtra("DETAIL_TEXT2", detailText2)
+
             val detailText = getDetailTextForResult(resultMajor1.text.toString())
             intent.putExtra("DETAIL_TEXT", detailText)
 
@@ -118,11 +129,7 @@ class ResultActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
     }
-
 
 
     private fun getDetailTextForResult(result: String): String {

@@ -1,3 +1,5 @@
+package com.example.hackathon
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -18,7 +20,9 @@ class StartActivity : AppCompatActivity() {
 
         // Set click listener for start button
         startButton.setOnClickListener {
-            setContentView(R.layout.main_screen)
+            val intent = Intent(this@StartActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
