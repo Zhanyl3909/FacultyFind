@@ -161,7 +161,8 @@
                     android:layout_marginRight="3dp"
                     android:gravity="center"
                     android:text="@string/progress"
-                    android:textAppearance="@style/progress" />
+                    android:textAppearance="@style/progress"
+                    android:fontFamily="@font/pretendard_medium"/>
 
                 <TextView
                     android:id="@+id/progress2"
@@ -170,7 +171,8 @@
                     android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:text="/ 21"
-                    android:textAppearance="@style/progress" />
+                    android:textAppearance="@style/progress"
+                    android:fontFamily="@font/pretendard_medium" />
             </LinearLayout>
 
 
