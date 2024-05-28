@@ -155,7 +155,7 @@ class ResultActivity : AppCompatActivity() {
             "사회과학 대학" -> getString(R.string.details_for_society_Major)
             "상경 대학" -> getString(R.string.details_for_sang_Major)
             "아시아 대학" -> getString(R.string.details_for_asia_Major)
-            "유럽미주 대학" -> getString(R.string.details_for_europe_Majoir)
+            "유럽미주 대학" -> getString(R.string.details_for_europe_Major)
             else -> ""
         }
     }
