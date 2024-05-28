@@ -12,8 +12,8 @@ import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mProgress: ProgressBar
-    private var mProgressStatus = 0
-    private var i: Int = 0
+    private var mProgressStatus = 1
+    private var i: Int = 1
 
     private lateinit var backButton: RelativeLayout
     private lateinit var nextButton: RelativeLayout
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         // Start a thread to update the progress bar
         Thread {
-            while (mProgressStatus < 5) {
+            while (mProgressStatus < 25) {
                 try {
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
@@ -40,9 +40,6 @@ class HomeActivity : AppCompatActivity() {
 
                 mProgress.post {
                     mProgress.progress = mProgressStatus
-                    if (mProgressStatus >= 5) {
-                        mProgress.isVisible = false // Hide the progress bar when done
-                    }
                 }
             }
         }.start()
@@ -60,10 +57,10 @@ class HomeActivity : AppCompatActivity() {
 
             val isSelected =  radioGroup.checkedRadioButtonId
             if (isSelected == -1) {
-                Toast.makeText(this@HomeActivity, "아이디와 비밀번호를 모두 입력해주세요.", Toast.LENGTH_SHORT)
+                Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                Toast.makeText(this@HomeActivity, "dkdhks", Toast.LENGTH_SHORT)
+                Toast.makeText(this@HomeActivity, "다음", Toast.LENGTH_SHORT)
                     .show()
             }
         }
