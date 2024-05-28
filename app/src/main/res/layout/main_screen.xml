@@ -30,7 +30,9 @@
                 android:text="BUFS"
                 android:textColor="#000000"
                 android:textSize="77sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+
+                />
 
             <TextView
                 android:id="@+id/text_main"
