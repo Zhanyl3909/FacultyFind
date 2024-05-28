@@ -150,7 +150,6 @@
 
             <RelativeLayout
                 android:id="@+id/next_button"
-                android:layout_marginTop="20dp"
                 android:layout_width="250dp"
                 android:layout_height="48dp"
                 android:background="@drawable/main_screen_button_non"
@@ -171,6 +170,25 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="15dp"
                     android:background="@drawable/arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/return_button"
+                android:layout_marginTop="60dp"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:background="@drawable/main_screen_button_non"
+                android:clickable="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_return"
+                    android:textAppearance="@style/button_return"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:layout_centerInParent="true"
+                    />
+
             </RelativeLayout>
 
 
