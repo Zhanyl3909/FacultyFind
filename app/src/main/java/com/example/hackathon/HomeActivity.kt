@@ -2,7 +2,6 @@
 
 package com.example.hackathon
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -94,21 +93,31 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+
+        //this makes change text on the last question to see the result
         nextButton.setOnClickListener {
             val isSelected = radioGroup.checkedRadioButtonId
             if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT).show()
             } else {
+                if (currentQuestionIndex < questions.size - 1) {
+                    goToNextQuestion()
+                } else {
+                    // If it's the last question, change the button text
+                    nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
+                }
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
                 goToNextQuestion()
             }
         }
+
         backButton.setOnClickListener {
             if (currentQuestionIndex > 0) {
                 goToBackQuestion()
             }
         }
+    
 
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
@@ -125,6 +134,7 @@ class HomeActivity : AppCompatActivity() {
         setQuestion()
         // Show the back button when moving to the next question
         backButton.visibility = View.VISIBLE
+        updateProgressBar()
     }
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
@@ -132,6 +142,12 @@ class HomeActivity : AppCompatActivity() {
             currentQuestionIndex += questions.size
         }
         setQuestion()
+        updateProgressBar()
+    }
+    private fun updateProgressBar() {
+        val totalQuestions = questions.size
+        val progress = ((currentQuestionIndex + 1) / totalQuestions.toDouble() * 100).toInt()
+        mProgress.progress = progress
     }
 
 }
