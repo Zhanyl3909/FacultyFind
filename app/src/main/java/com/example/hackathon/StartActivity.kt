@@ -1,39 +1,34 @@
-package com.example.hackathon
-
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
-import android.widget.RadioGroup
 import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hackathon.HomeActivity
+import com.example.hackathon.R
 
 class StartActivity : AppCompatActivity() {
 
-
-    private lateinit var start_button: RelativeLayout
+    private lateinit var startButton: RelativeLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start_screen)
 
+        startButton = findViewById(R.id.start_button)
 
-        start_button = findViewById(R.id.start_button)
-
-
+        // Set click listener for start button
+        startButton.setOnClickListener {
+            setContentView(R.layout.main_screen)
+        }
     }
+
+
+
+
+
+
     fun onClickStart(view: View) {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
-    start_button.setOnClickListener {
-
-    }
-
-
 }
-
