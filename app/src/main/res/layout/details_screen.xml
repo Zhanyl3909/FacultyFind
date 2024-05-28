@@ -66,8 +66,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginRight="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/radius"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
@@ -190,15 +190,14 @@
 
                         <View
                             android:id="@+id/ellipse"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/circle" />
 
                         <View
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:layout_centerInParent="true"
                             android:background="@drawable/job_icon" />
                     </RelativeLayout>
@@ -214,7 +213,7 @@
                             android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:textAlignment="textStart"
                             android:gravity="start"
                             android:fontFamily="@font/pretendard_light"
@@ -245,15 +244,15 @@
                         >
 
                         <View
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/circle" />
 
                         <View
                             android:id="@+id/graduation_hat_icon"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
 
                             android:layout_centerInParent="true"
                             android:background="@drawable/graduation_hat_icon" />
@@ -271,7 +270,7 @@
                             android:layout_width="186dp"
                             android:layout_height="60dp"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:textAlignment="textStart"
                             android:gravity="start"
                             android:fontFamily="@font/pretendard_light"
@@ -411,14 +410,14 @@
 
                         <View
                             android:id="@+id/ellipse_second"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/circle" />
 
                         <View
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
 
                             android:layout_centerInParent="true"
                             android:background="@drawable/job_icon" />
@@ -435,7 +434,7 @@
                             android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:fontFamily="@font/pretendard_light"
                             android:textAlignment="textStart"
                             android:gravity="start"
@@ -466,15 +465,15 @@
                         >
 
                         <View
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/circle" />
 
                         <View
                             android:id="@+id/graduation_hat_icon_second"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
 
                             android:layout_centerInParent="true"
                             android:background="@drawable/graduation_hat_icon" />
@@ -492,7 +491,7 @@
                             android:layout_width="186dp"
                             android:layout_height="60dp"
                             android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="50dp"
                             android:fontFamily="@font/pretendard_light"
                             android:textAlignment="textStart"
                             android:gravity="start"
