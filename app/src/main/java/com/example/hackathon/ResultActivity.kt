@@ -150,12 +150,12 @@ class ResultActivity : AppCompatActivity() {
 
     private fun getDetailTextForResultMajor (result: String): String {
         return when (result) {
-            "IT 대학" -> getString(R.string.details_for_IT)
-            "디지털미디어 대학" -> getString(R.string.details_for_digitalMedia)
-            "사회과학 대학" -> getString(R.string.details_for_society)
-            "상경 대학" -> getString(R.string.details_for_sang)
-            "아시아 대학" -> getString(R.string.details_for_asia)
-            "유럽미주 대학" -> getString(R.string.details_for_europe)
+            "IT 대학" -> getString(R.string.details_for_IT_Major)
+            "디지털미디어 대학" -> getString(R.string.details_for_digitalMedia_Major)
+            "사회과학 대학" -> getString(R.string.details_for_society_Major)
+            "상경 대학" -> getString(R.string.details_for_sang_Major)
+            "아시아 대학" -> getString(R.string.details_for_asia_Major)
+            "유럽미주 대학" -> getString(R.string.details_for_europe_Majoir)
             else -> ""
         }
     }
