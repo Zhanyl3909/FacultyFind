@@ -32,6 +32,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/start_for_start_screen"
                 android:layout_height="wrap_content"
                 android:text="시작하기"
                 android:textSize="60dp"
@@ -47,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:onClick="onClickStart"
             android:text="@string/welcome_screen_logo"
             android:textAppearance="@style/welcome_screen_logo"
             android:fontFamily="@font/pretendard_medium"
