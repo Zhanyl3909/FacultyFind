@@ -36,6 +36,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_screen)
 
+
+        //initialize button through id in the main.xml
         backButton = findViewById(R.id.back_button)
         nextButton = findViewById(R.id.next_button)
         radioGroup = findViewById(R.id.options)
@@ -69,12 +71,19 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+
+        //this makes change text on the last question to see the result
         nextButton.setOnClickListener {
             val isSelected = radioGroup.checkedRadioButtonId
             if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT).show()
             } else {
-                goToNextQuestion()
+                if (currentQuestionIndex < questions.size - 1) {
+                    goToNextQuestion()
+                } else {
+                    // If it's the last question, change the button text
+                    nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
+                }
             }
         }
 
@@ -87,7 +96,11 @@ class HomeActivity : AppCompatActivity() {
 
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
+
+
+
     }
+
 
     private fun setQuestion() {  //text 표시
         questionTextView.text = questions[currentQuestionIndex]
@@ -98,6 +111,7 @@ class HomeActivity : AppCompatActivity() {
         setQuestion()
         // Show the back button when moving to the next question
         backButton.visibility = View.VISIBLE
+        updateProgressBar()
     }
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
@@ -105,6 +119,12 @@ class HomeActivity : AppCompatActivity() {
             currentQuestionIndex += questions.size
         }
         setQuestion()
+        updateProgressBar()
+    }
+    private fun updateProgressBar() {
+        val totalQuestions = questions.size
+        val progress = ((currentQuestionIndex + 1) / totalQuestions.toDouble() * 100).toInt()
+        mProgress.progress = progress
     }
 
 }

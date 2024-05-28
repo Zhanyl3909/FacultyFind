@@ -223,6 +223,7 @@
                 android:clickable="true"
                 >
                 <TextView
+                    android:id="@+id/text_for_nextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_next"
