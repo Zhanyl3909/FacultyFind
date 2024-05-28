@@ -48,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
 
         // Start a thread to update the progress bar
         Thread {
-            while (mProgressStatus < 25) {
+            while (mProgressStatus < 20) {
                 try {
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
