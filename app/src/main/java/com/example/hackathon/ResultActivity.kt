@@ -1,26 +1,20 @@
 package com.example.hackathon
 
-import DetailsActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.RadioGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var resultMajor1: TextView
     private lateinit var resultMajor2: TextView
+
     private lateinit var goToDetails: RelativeLayout
 
-
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.last_screen)
@@ -40,7 +34,7 @@ class ResultActivity : AppCompatActivity() {
 
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
-        goToDetails = findViewById(R.id.detail_view_button)
+        goToDetails = findViewById(R.id.details_view_button)
 
 
         val scoreMap = mapOf (

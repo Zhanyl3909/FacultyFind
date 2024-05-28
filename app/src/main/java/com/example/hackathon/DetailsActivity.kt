@@ -1,3 +1,5 @@
+package com.example.hackathon
+
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
