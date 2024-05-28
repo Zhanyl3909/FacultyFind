@@ -31,7 +31,7 @@ class StartActivity : AppCompatActivity() {
         startActivity(intent)
     }
     start_button.setOnClickListener {
-        
+
     }
 
 
