@@ -70,6 +70,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_screen)
 
+        resetScores(this)
+
         backButton = findViewById(R.id.back_button)
         nextButton = findViewById(R.id.next_button)
         radioGroup = findViewById(R.id.options)
@@ -134,6 +136,7 @@ class HomeActivity : AppCompatActivity() {
     }
     fun onClickTryAgain(view: View) {
         val intent = Intent(this, HomeActivity::class.java)
+        resetScores(this)
         startActivity(intent)
     }
 
@@ -195,6 +198,12 @@ class HomeActivity : AppCompatActivity() {
         return sharedPreferences.getInt(sequence.toString(), 0) // 기본값으로 0을 반환
     }
 
+    fun resetScores(context: Context) {
+        val sharedPreferences = context.getSharedPreferences("Scores", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.clear() // 모든 데이터 삭제
+        editor.apply() // 변경사항 적용
+    }
 
 
 }
