@@ -74,6 +74,13 @@
 
 <!-- first result -->
                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
@@ -152,7 +159,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="40dp"
-
                     android:orientation="horizontal">
 
                     <TextView
@@ -163,7 +169,8 @@
                         android:layout_marginLeft="40dp"
                         android:fontFamily="@font/pretendard_light"
                         android:text="@string/result_detail_text_2"
-                        android:textAlignment="center"
+                        android:textAlignment="textStart"
+                        android:gravity="start"
                         android:textAppearance="@style/detail_text">
 
                     </TextView>
@@ -207,10 +214,10 @@
                             android:layout_height="60dp"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentRight="true"
-                            android:layout_marginTop="0dp"
                             android:layout_marginRight="20dp"
+                            android:textAlignment="textStart"
+                            android:gravity="start"
                             android:fontFamily="@font/pretendard_light"
-                            android:gravity="top"
                             android:text="@string/result_detail_job"
                             android:textAppearance="@style/detail_text" />
 
@@ -265,8 +272,9 @@
                             android:layout_height="60dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
+                            android:textAlignment="textStart"
+                            android:gravity="start"
                             android:fontFamily="@font/pretendard_light"
-                            android:gravity="top"
                             android:text="@string/result_datail_faculty"
                             android:textAppearance="@style/detail_text" />
 
@@ -281,233 +289,229 @@
                             />
                     </RelativeLayout>
                 </RelativeLayout>
-
-<!--                &lt;!&ndash;  second result &ndash;&gt;-->
-<!--                <RelativeLayout-->
-<!--                    android:id="@+id/second_result"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <RelativeLayout-->
-<!--                        android:id="@+id/button"-->
-<!--                        android:layout_width="102dp"-->
-<!--                        android:layout_height="24dp"-->
-<!--                        android:layout_marginLeft="20dp"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:background="@drawable/detail_text">-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/details_faculty_text"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_centerInParent="true"-->
-<!--                            android:fontFamily="@font/pretendard_semibold"-->
-<!--                            android:gravity="center"-->
-<!--                            android:text="@string/result_detail_title"-->
-<!--                            android:textAppearance="@style/detail_text">-->
-
-<!--                        </TextView>-->
-<!--                    </RelativeLayout>-->
+                </LinearLayout>
 
 
-<!--                </LinearLayout>-->
+                <!--  second result -->
+                <LinearLayout
+                    android:id="@+id/second_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="120dp"-->
-<!--                    android:layout_marginTop="15dp">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/result_1"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:layout_marginLeft="90dp"-->
-<!--                        android:layout_marginBottom="1dp"-->
-<!--                        android:fontFamily="@font/pretendard_bold"-->
-<!--                        android:gravity="center"-->
-<!--                        android:text="@string/result_detail_text_1"-->
-<!--                        android:textAppearance="@style/result">-->
+                    <RelativeLayout
+                        android:id="@+id/button_second"
+                        android:layout_width="102dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/detail_text">
 
-<!--                    </TextView>-->
+                        <TextView
+                            android:id="@+id/details_faculty_text_second"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/pretendard_semibold"
+                            android:gravity="center"
+                            android:text="@string/result_detail_title"
+                            android:textAppearance="@style/detail_text">
 
-
-<!--                    <View-->
-<!--                        android:id="@+id/line_1"-->
-<!--                        android:layout_width="250dp"-->
-<!--                        android:layout_height="1dp"-->
-
-<!--                        android:layout_alignParentTop="true"-->
-
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:background="@drawable/line"-->
-<!--                        android:gravity="center">-->
-
-<!--                    </View>-->
-
-<!--                    <View-->
-<!--                        android:layout_width="250dp"-->
-<!--                        android:layout_height="1dp"-->
-<!--                        android:layout_alignParentBottom="true"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:background="@drawable/line"-->
-<!--                        android:gravity="center">-->
-
-<!--                    </View>-->
-
-<!--                </RelativeLayout>-->
-
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="40dp"-->
-<!--                    android:layout_marginBottom="40dp"-->
-
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/textView_forDetails"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:layout_marginLeft="40dp"-->
-<!--                        android:fontFamily="@font/pretendard_light"-->
-<!--                        android:text="@string/result_detail_text_2"-->
-<!--                        android:textAlignment="center"-->
-<!--                        android:textAppearance="@style/detail_text">-->
-
-<!--                    </TextView>-->
-<!--                </RelativeLayout>-->
-
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="50dp">-->
-
-<!--                    <RelativeLayout-->
-<!--                        android:id="@+id/job_icon"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentLeft="true"-->
-<!--                        android:layout_marginLeft="50dp">-->
-
-<!--                        <View-->
-<!--                            android:id="@+id/ellipse"-->
-<!--                            android:layout_width="45dp"-->
-<!--                            android:layout_height="45dp"-->
-<!--                            android:layout_alignParentTop="true"-->
-<!--                            android:background="@drawable/circle" />-->
-
-<!--                        <View-->
-<!--                            android:layout_width="30dp"-->
-<!--                            android:layout_height="30dp"-->
-
-<!--                            android:layout_centerInParent="true"-->
-<!--                            android:background="@drawable/job_icon" />-->
-<!--                    </RelativeLayout>-->
-
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        >-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/detail_job"-->
-<!--                            android:layout_width="186dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_alignParentTop="true"-->
-<!--                            android:layout_alignParentRight="true"-->
-<!--                            android:layout_marginTop="0dp"-->
-<!--                            android:layout_marginRight="20dp"-->
-<!--                            android:fontFamily="@font/pretendard_light"-->
-<!--                            android:gravity="top"-->
-<!--                            android:text="@string/result_detail_job"-->
-<!--                            android:textAppearance="@style/detail_text" />-->
-
-<!--                        <View-->
-<!--                            android:id="@+id/detail_line"-->
-<!--                            android:layout_width="195dp"-->
-<!--                            android:layout_height="0.5dp"-->
-<!--                            android:layout_below="@+id/detail_job"-->
-<!--                            android:layout_alignParentRight="true"-->
-<!--                            android:layout_marginRight="20dp"-->
-<!--                            android:background="@drawable/detail_line"-->
-<!--                            />-->
+                        </TextView>
+                    </RelativeLayout>
 
 
-<!--                    </RelativeLayout>-->
+                </LinearLayout>
 
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentLeft="true"-->
-<!--                        android:layout_marginTop="90dp"-->
-<!--                        android:layout_marginLeft="50dp"-->
-<!--                        android:layout_below="@+id/job_icon"-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="15dp">
 
-<!--                        >-->
+                    <TextView
+                        android:id="@+id/result_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/pretendard_bold"
+                        android:gravity="center"
+                        android:text="@string/result_detail_text_1"
+                        android:textAppearance="@style/result">
 
-<!--                        <View-->
-<!--                            android:layout_width="45dp"-->
-<!--                            android:layout_height="45dp"-->
-<!--                            android:layout_alignParentTop="true"-->
-<!--                            android:background="@drawable/circle" />-->
+                    </TextView>
 
-<!--                        <View-->
-<!--                            android:id="@+id/graduation_hat_icon"-->
-<!--                            android:layout_width="30dp"-->
-<!--                            android:layout_height="30dp"-->
 
-<!--                            android:layout_centerInParent="true"-->
-<!--                            android:background="@drawable/graduation_hat_icon" />-->
-<!--                    </RelativeLayout>-->
+                    <View
+                        android:id="@+id/line_second"
+                        android:layout_width="250dp"
+                        android:layout_height="1dp"
 
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="90dp"-->
-<!--                        android:layout_below="@+id/job_icon"-->
-<!--                        >-->
+                        android:layout_alignParentTop="true"
 
-<!--                        <TextView-->
-<!--                            android:id="@+id/detail_faculty"-->
-<!--                            android:layout_width="186dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_alignParentRight="true"-->
-<!--                            android:layout_marginRight="20dp"-->
-<!--                            android:fontFamily="@font/pretendard_light"-->
-<!--                            android:gravity="top"-->
-<!--                            android:text="@string/result_datail_faculty"-->
-<!--                            android:textAppearance="@style/detail_text" />-->
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/line"
+                        android:gravity="center">
 
-<!--                        <View-->
-<!--                            android:id="@+id/detail_faculty_line"-->
-<!--                            android:layout_width="195dp"-->
-<!--                            android:layout_height="0.5dp"-->
-<!--                            android:layout_below="@+id/detail_faculty"-->
-<!--                            android:layout_alignParentRight="true"-->
-<!--                            android:layout_marginRight="20dp"-->
-<!--                            android:background="@drawable/detail_line"-->
-<!--                            />-->
-<!--                    </RelativeLayout>-->
-<!--                </RelativeLayout>-->
+                    </View>
 
-<!--                </RelativeLayout>-->
+                    <View
+                        android:layout_width="250dp"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/line"
+                        android:gravity="center">
 
+                    </View>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView_forDetails_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="40dp"
+                        android:fontFamily="@font/pretendard_light"
+                        android:textAlignment="textStart"
+                        android:gravity="start"
+                        android:text="@string/result_detail_text_2"
+                        android:textAppearance="@style/detail_text">
+
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp">
+
+                    <RelativeLayout
+                        android:id="@+id/job_icon_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="50dp">
+
+                        <View
+                            android:id="@+id/ellipse_second"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/circle" />
+
+                        <View
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/job_icon" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/detail_job_second"
+                            android:layout_width="186dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:fontFamily="@font/pretendard_light"
+                            android:textAlignment="textStart"
+                            android:gravity="start"
+                            android:text="@string/result_detail_job"
+                            android:textAppearance="@style/detail_text" />
+
+                        <View
+                            android:id="@+id/detail_line_second"
+                            android:layout_width="195dp"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@+id/detail_job_second"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/detail_line"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_below="@+id/job_icon_second"
+
+                        >
+
+                        <View
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/circle" />
+
+                        <View
+                            android:id="@+id/graduation_hat_icon_second"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/graduation_hat_icon" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="90dp"
+                        android:layout_below="@+id/job_icon_second"
+                        >
+
+                        <TextView
+                            android:id="@+id/detail_faculty_second"
+                            android:layout_width="186dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:fontFamily="@font/pretendard_light"
+                            android:textAlignment="textStart"
+                            android:gravity="start"
+                            android:text="@string/result_datail_faculty"
+                            android:textAppearance="@style/detail_text" />
+
+                        <View
+                            android:id="@+id/detail_faculty_line_second"
+                            android:layout_width="195dp"
+                            android:layout_height="0.5dp"
+                            android:layout_below="@+id/detail_faculty_second"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/detail_line"
+                            />
+                    </RelativeLayout>
+                </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n안녕하세요 김땡땡 입니다 \n"-->
-<!--                android:textSize="50sp" />-->
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
