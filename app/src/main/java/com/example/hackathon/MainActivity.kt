@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
+//Lounge Screen Disappears in 2 seconds (code below)
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         // Use Handler directly on the main thread
         Handler(Looper.getMainLooper()).postDelayed({
-            
+
             val intent = Intent(this@MainActivity, HomeActivity::class.java)
 
             startActivity(intent)
