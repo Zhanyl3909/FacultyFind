@@ -9,13 +9,13 @@
     <item android:id="@android:id/secondaryProgress">
         <shape>
             <corners android:radius="6dp" />
-            <solid android:color="#B2CCFF" />
+            <solid android:color="#000000" />
         </shape>
     </item>
     <item android:id="@android:id/progress" >
         <shape>
             <corners android:radius="6dp" />
-            <solid android:color="#EAEAEA" />
+            <solid android:color="#FFFFFF" />
         </shape>
     </item>
 </layer-list>

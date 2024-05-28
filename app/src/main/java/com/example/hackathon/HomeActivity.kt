@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         // Start a thread to update the progress bar
         Thread {
-            while (mProgressStatus < 100) {
+            while (mProgressStatus < 5) {
                 try {
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
 
                 mProgress.post {
                     mProgress.progress = mProgressStatus
-                    if (mProgressStatus >= 100) {
+                    if (mProgressStatus >= 5) {
                         mProgress.isVisible = false // Hide the progress bar when done
                     }
                 }
@@ -52,12 +52,20 @@ class HomeActivity : AppCompatActivity() {
             nextButton.setBackgroundResource(R.drawable.main_screen_button)
         }
 
-        val radioIsenabled: Boolean = radioGroup.isEnabled
+
+
+
 
         nextButton.setOnClickListener {
-            if (!radioIsenabled)
+
+            val isSelected =  radioGroup.checkedRadioButtonId
+            if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "아이디와 비밀번호를 모두 입력해주세요.", Toast.LENGTH_SHORT)
-                .show()
+                    .show()
+            } else {
+                Toast.makeText(this@HomeActivity, "dkdhks", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
 
 
