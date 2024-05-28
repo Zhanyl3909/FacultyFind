@@ -202,17 +202,17 @@
                 android:id="@+id/next_button"
                 android:layout_width="250dp"
                 android:layout_height="48dp"
-                android:background="@drawable/main_screen_button_non"
-                android:clickable="true"
-                >
+                android:background="@drawable/main_screen_button"
+                android:clickable="true">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_last"
-                    android:textAppearance="@style/button_back"
-                    android:fontFamily="@font/pretendard_bold"
                     android:layout_centerInParent="true"
-                    />
+                    android:fontFamily="@font/pretendard_bold"
+                    android:text="@string/button_last"
+                    android:textAppearance="@style/button_back" />
+
                 <View
                     android:layout_width="23dp"
                     android:layout_height="16dp"
@@ -227,7 +227,8 @@
                 android:layout_marginTop="60dp"
                 android:layout_width="250dp"
                 android:layout_height="48dp"
-                android:background="@drawable/main_screen_button_non"
+                android:background="@drawable/main_screen_button"
+                android:onClick="onClickTryAgain"
                 android:clickable="true"
                 >
                 <TextView

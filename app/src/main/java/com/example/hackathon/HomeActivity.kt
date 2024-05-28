@@ -4,15 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.RadioGroup
 import android.widget.RelativeLayout
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
 
@@ -103,14 +100,16 @@ class HomeActivity : AppCompatActivity() {
                 }
                 val selectedOptionId = radioGroup.checkedRadioButtonId
                 goToScore(questions[currentQuestionIndex].second, selectedOptionId)
-                goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
 
                 if (currentQuestionIndex == 19) {
-                    findMaxScore()
-                    showResultScreen()
+                    val maxMajor = findMaxScore()
+                    showResultScreen(maxMajor)
+                } else {
+                    goToNextQuestion()
                 }
+
             }
         }
 
@@ -120,9 +119,16 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
+
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
     }
+    fun onClickTryAgain(view: View) {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
+
 
     @SuppressLint("SetTextI18n")
     private fun setQuestion() {  //text 표시
@@ -148,11 +154,10 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun findMaxScore() {
-        val numbers = listOf(europe.majorScore, asia.majorScore, 3, 4, 5)
+    private fun findMaxScore(): Int {
+        val numbers = listOf(europe.majorScore, asia.majorScore, university.majorScore, it.majorScore, digital.majorScore)
         val maxNumber = numbers.reduce { max, number -> if (number > max) number else max }
-
-        println("가장 큰 값: $maxNumber")
+        return maxNumber
     }
 
     private fun goToBackQuestion() {
@@ -162,7 +167,7 @@ class HomeActivity : AppCompatActivity() {
         }
         setQuestion()
     }
-    private fun showResultScreen() {
+    private fun showResultScreen(maxMajor: Int) {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)
         startActivity(intent)
     }
