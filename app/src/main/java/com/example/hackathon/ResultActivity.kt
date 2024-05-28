@@ -115,26 +115,30 @@ class ResultActivity : AppCompatActivity() {
             val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
 
             if (valueKeys.size == 2) {
-                intent.putExtra("DETAIL_TEXT_title1", detailText1)
-                intent.putExtra("DETAIL_TEXT_title2", detailText2)
                 intent.putExtra("Major_Count", 2)
+                intent.putExtra("DETAIL_TEXT_title2", detailText2)
+
+                val detailText2 = getDetailTextForResult(resultMajor2.text.toString())
+                intent.putExtra("DETAIL_TEXT2", detailText2)
+
+                val detailTextMajor2 = getDetailTextForResultMajor(resultMajor2.text.toString())
+                intent.putExtra("DETAIL_TEXT_Major2", detailTextMajor2)
+
             } else if (valueKeys.size == 1) {
-                intent.putExtra("DETAIL_TEXT_title1", detailText1)
                 intent.putExtra("Major_Count", 1)
             }
 
-            val detailText = getDetailTextForResult(resultMajor1.text.toString())
-            intent.putExtra("DETAIL_TEXT", detailText)
-            val detailTextMajor = getDetailTextForResultMajor(resultMajor1.text.toString())
-            intent.putExtra("DETAIL_TEXT_Major", detailTextMajor)
+            intent.putExtra("DETAIL_TEXT_title1", detailText1)
 
+            val detailText1 = getDetailTextForResult(resultMajor1.text.toString())
+            intent.putExtra("DETAIL_TEXT1", detailText1)
 
+            val detailTextMajor1 = getDetailTextForResultMajor(resultMajor1.text.toString())
+            intent.putExtra("DETAIL_TEXT_Major1", detailTextMajor1)
 
             startActivity(intent)
         }
-
     }
-
 
     private fun getDetailTextForResult (result: String): String {
         return when (result) {
