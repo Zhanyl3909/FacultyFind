@@ -1,5 +1,6 @@
 package com.example.hackathon
 
+import DetailsActivity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -17,6 +18,7 @@ class ResultActivity : AppCompatActivity() {
 
     private lateinit var resultMajor1: TextView
     private lateinit var resultMajor2: TextView
+    private lateinit var goToDetails: RelativeLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,8 @@ class ResultActivity : AppCompatActivity() {
 
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
+        goToDetails = findViewById(R.id.detail_view_button)
+
 
         val scoreMap = mapOf (
             "Europe" to europeScore,
@@ -106,7 +110,10 @@ class ResultActivity : AppCompatActivity() {
         }
 
 
-
+        goToDetails.setOnClickListener {
+            val intent = Intent(this@ResultActivity, DetailsActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
