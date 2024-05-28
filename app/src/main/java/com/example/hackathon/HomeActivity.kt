@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 
 class HomeActivity : AppCompatActivity() {
+
+    private val score = Score()
+
     private lateinit var mProgress: ProgressBar
 
     private lateinit var backButton: RelativeLayout
@@ -83,7 +86,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
-
         //this makes change text on the last question to see the result
         nextButton.setOnClickListener {
             val isSelected = radioGroup.checkedRadioButtonId
@@ -93,6 +95,8 @@ class HomeActivity : AppCompatActivity() {
                 if (currentQuestionIndex == 18) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
                 }
+                val selectedOptionId = radioGroup.checkedRadioButtonId
+                goToScore(questions[currentQuestionIndex].second, selectedOptionId)
                 goToNextQuestion()
                 radioGroup.clearCheck()
                 nextButton.setBackgroundResource(R.drawable.main_screen_button_non)
@@ -104,9 +108,9 @@ class HomeActivity : AppCompatActivity() {
                 goToBackQuestion()
             }
         }
-
         // Make the prev button invisible initially
         backButton.visibility = View.INVISIBLE
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -122,6 +126,21 @@ class HomeActivity : AppCompatActivity() {
         // Show the back button when moving to the next question
         backButton.visibility = View.VISIBLE
     }
+
+    private fun goToScore (_major: Int, radiobuttonID: Int) {
+        val whatSelectRadio = radiobuttonID
+        score.major = _major
+        score.addTheScore()
+        if (whatSelectRadio == R.id.option1) {
+            score.whatSelectRadioInt = 2
+        } else if (whatSelectRadio == R.id.option1) {
+            score.whatSelectRadioInt = 1
+        } else {
+            score.whatSelectRadioInt = 0
+        }
+        score.addTheScore()
+    }
+
     private fun goToBackQuestion() {
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
         if (currentQuestionIndex < 0) {
