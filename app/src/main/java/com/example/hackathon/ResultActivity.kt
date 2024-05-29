@@ -61,7 +61,7 @@ class ResultActivity : AppCompatActivity() {
         println("가장 큰 값을 가진 키: $valueKeys")
         println(valueKeys)
 
-        if (valueKeys.size >= 3 || valueKeys.isEmpty()) {
+        if (valueKeys.size > 3 || valueKeys.isEmpty()) {
             val intent = Intent(this@ResultActivity, FailActivity::class.java)
             startActivity(intent)
         }
@@ -81,7 +81,7 @@ class ResultActivity : AppCompatActivity() {
             detailText1 = resultMajor1.text.toString()
         }
 
-        if (valueKeys.size == 2) {
+        if (valueKeys.size >= 2) {
             val maxKey = valueKeys.maxByOrNull { key -> scoreMap[key] ?: Int.MIN_VALUE }
             if (maxKey == "Europe")
                 resultMajor1.text = "유럽미주 대학"
