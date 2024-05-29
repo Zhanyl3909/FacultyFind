@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 
 class Score {
 
-    private val majorList = arrayListOf(0)
+    val majorList = arrayListOf(0)
 
     fun addTheScore(radiobuttonID: Int) {
         val addScore: Int

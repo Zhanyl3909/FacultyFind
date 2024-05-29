@@ -82,9 +82,8 @@ class HomeActivity : AppCompatActivity() {
         questionTextNumberProgress = findViewById(R.id.progress1)
 
         // Random
-        // questions = questions.shuffled()
+        questions = questions.shuffled()
         setQuestion()
-
 
         radioGroup.setOnCheckedChangeListener { _, checkedId ->
             // Enable the next button if a radio button is selected
@@ -100,8 +99,12 @@ class HomeActivity : AppCompatActivity() {
             if (isSelected == -1) {
                 Toast.makeText(this@HomeActivity, "답변을 선택해 주세요", Toast.LENGTH_SHORT).show()
             } else {
-                if (currentQuestionIndex == 18) {
+                if (currentQuestionIndex == 22) {
                     nextButton.findViewById<TextView>(R.id.text_for_nextButton).text = "결과 보기"
+                }
+                if (currentQuestionIndex == 0) {
+                    if (loadScore(this, currentQuestionIndex) != 0)
+                        goMinusToScore(questions[currentQuestionIndex].second)
                 }
 
                 val selectedOptionId = radioGroup.checkedRadioButtonId
@@ -114,9 +117,11 @@ class HomeActivity : AppCompatActivity() {
                     radioGroup.check(loadScore(this, currentQuestionIndex))
                 }
 
+
+
                 saveScore(this, currentQuestionIndex, selectedOptionId)
 
-                if (currentQuestionIndex == 19) {
+                if (currentQuestionIndex == 23) {
                     showResultScreen()
                 } else {
                     goToNextQuestion()
@@ -157,12 +162,14 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToBackQuestion() {
+        if (loadScore(this, currentQuestionIndex) != 0) {
+            goMinusToScore(questions[currentQuestionIndex].second)
+        }
         currentQuestionIndex = (currentQuestionIndex - 1) % questions.size
         if (currentQuestionIndex < 0) {
             currentQuestionIndex += questions.size
         }
         setQuestion()
-        goMinusToScore(questions[currentQuestionIndex].second)
         radioGroup.clearCheck()
         radioGroup.check(loadScore(this, currentQuestionIndex))
     }
@@ -176,6 +183,8 @@ class HomeActivity : AppCompatActivity() {
             "digital" -> digital.addTheScore(radiobuttonID)
             "social" -> social.addTheScore(radiobuttonID)
         }
+        println(europe.majorList)
+        println(asia.majorList)
     }
     private fun goMinusToScore (major: String) {
         when (major) {
@@ -186,6 +195,8 @@ class HomeActivity : AppCompatActivity() {
             "digital" -> digital.minusTheScore()
             "social" -> social.minusTheScore()
         }
+        println(europe.majorList)
+        println(asia.majorList)
     }
     private fun showResultScreen() {
         val intent = Intent(this@HomeActivity, ResultActivity::class.java)

@@ -15,6 +15,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var resultMajor2: TextView
 
     private lateinit var goToDetails: RelativeLayout
+    private lateinit var goToFirst: RelativeLayout
     private lateinit var secondMajorResult: LinearLayout
 
     private lateinit var detailText1: String
@@ -37,10 +38,12 @@ class ResultActivity : AppCompatActivity() {
         println(universityScore)
         println(itScore)
         println(digitalScore)
+        println(socialScore)
 
         resultMajor1 = findViewById(R.id.result_1)
         resultMajor2 = findViewById(R.id.result_2)
 
+        goToFirst = findViewById(R.id.return_button)
         goToDetails = findViewById(R.id.details_view_button)
         secondMajorResult = findViewById(R.id.second_major_result)
 
@@ -143,6 +146,12 @@ class ResultActivity : AppCompatActivity() {
             intent.putExtra("DETAIL_TEXT_Major1", detailTextMajor1)
 
             startActivity(intent)
+        }
+
+        goToFirst.setOnClickListener {
+            val intent = Intent(this@ResultActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

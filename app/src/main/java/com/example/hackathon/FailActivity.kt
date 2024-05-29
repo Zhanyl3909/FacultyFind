@@ -12,16 +12,17 @@ import com.example.hackathon.R
 
 class FailActivity : AppCompatActivity() {
 
-    lateinit var againButton: LinearLayout
+    private lateinit var againButton: LinearLayout
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fail_screen)
 
-        againButton = findViewById(R.id.return_button)
+        againButton = findViewById(R.id.return_button_1)
 
         againButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this@FailActivity, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
