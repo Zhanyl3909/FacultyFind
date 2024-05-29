@@ -148,7 +148,7 @@
                 android:layout_width="232dp"
                 android:layout_height="8dp"
                 android:layout_marginTop="15dp"
-                android:max="20"
+                android:max="24"
                 android:progress="1"
                 android:progressDrawable="@drawable/progressbar_progressbar1"
                 />
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
                     android:gravity="center"
-                    android:text="/ 20"
+                    android:text="/ 24"
                     android:textAppearance="@style/progress"
                     android:fontFamily="@font/pretendard_medium" />
             </LinearLayout>
